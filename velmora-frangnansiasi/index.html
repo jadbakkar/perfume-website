@@ -1,0 +1,896 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Velmora Fragrancias — Luxury-inspired concentrated oil perfumes crafted in Lebanon. Your favourite designer scents, reimagined in our signature packaging.">
+    <meta name="keywords" content="perfume, fragrance, luxury scents, inspired perfume, concentrated perfume oil, Lebanon perfume, Velmora">
+    <meta name="author" content="Velmora Fragrancias">
+    <meta property="og:title" content="Velmora Fragrancias | Luxury Inspired Scents">
+    <meta property="og:description" content="Choose the big-brand perfume that speaks to you. We recreate it with our own exclusive packaging and high-concentration oils.">
+    <meta property="og:image" content="photo/main.hrro.jpeg">
+    <meta property="og:type" content="website">
+    <title>Velmora Fragrancias | Luxury Inspired Scents</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- ═══════════ HEADER ═══════════ -->
+    <header class="header" id="mainHeader">
+        <div class="ticker-ribbon">
+            <marquee scrollamount="4">
+                ✨FREE delivery for your orders from the website &nbsp;•&nbsp; FREE Discovery Set with any 100ml purchase &nbsp;•&nbsp; 🚚 Nationwide Delivery across Lebanon &nbsp;•&nbsp; 💧 Pure Oil — 12+ Hours Lasting&nbsp;•&nbsp; free delivery for your orders from the website ✨
+            </marquee>
+        </div>
+        <div class="header-inner">
+            <a href="#" class="logo-wrap">
+                <img src="photo/logo.jpeg" alt="Velmora" class="logo-img">
+                <span class="logo-text">VELMORA</span>
+            </a>
+            <nav class="nav">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#bestsellers" class="nav-link">Shop</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#packaging" class="nav-link">Packaging</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+            </nav>
+            <div class="header-right">
+                <button class="icon-btn" id="hamburgerBtn" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════ MOBILE DRAWER ═══════════ -->
+    <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <span class="drawer-logo">VELMORA</span>
+            <button class="drawer-close" id="drawerCloseBtn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="#hero" class="drawer-nav-link"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="#bestsellers" class="drawer-nav-link"><i class="fa-solid fa-bottle-droplet"></i> Shop</a>
+            <a href="#about" class="drawer-nav-link"><i class="fa-solid fa-book-open"></i> About Us</a>
+            <a href="#tips" class="drawer-nav-link"><i class="fa-solid fa-lightbulb"></i> Tips</a>
+            <a href="#packaging" class="drawer-nav-link"><i class="fa-solid fa-box-open"></i> Packaging</a>
+            <a href="#reviews" class="drawer-nav-link"><i class="fa-solid fa-star"></i> Reviews</a>
+        </nav>
+        <div class="drawer-footer">
+            <a href="https://wa.me/96181772615" class="btn-primary btn-primary--gold" style="width:100%; margin-bottom: 16px;">
+                <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+            <div class="drawer-social">
+                <a href="https://www.instagram.com/velmorafragrancias/?hl=en" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61591699116306" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="mailto:velmorafragrances6@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="photo/mobile hero.jpeg" alt="Velmora" class="hero-bg-mobile">
+            <img src="photo/main.hrro.jpeg" alt="Velmora" class="hero-bg-desktop">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">Inspired by Luxury · Crafted by Velmora</div>
+            <h1 class="hero-title">Your Favourite Scent.<br><em>Our Signature.</em></h1>
+            <p class="hero-sub">
+                Choose the big-brand perfume that speaks to you. We recreate it — with our own exclusive packaging and quality.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#bestsellers" class="btn-primary btn-primary--gold">
+                    <i class="fa-solid fa-bag-shopping"></i> Shop Now
+                </a>
+                
+                </a>
+            </div>
+        </div>
+        <div class="scroll-hint"><i class="fa-solid fa-chevron-down"></i></div>
+    </section>
+
+    <!-- ═══════════ BRAND MARQUEE ═══════════ -->
+    <div class="brand-strip">
+        <div class="brand-strip-inner" id="brandStrip"></div>
+    </div>
+     
+    <!-- ═══════════ QUIZ BUTTON + POPUP MODAL ═══════════ -->
+<!-- Paste this whole block anywhere in your <body> -->
+
+<div style="display: flex; justify-content: center; width: 100%; margin: 24px 0;">
+    <button id="openQuizBtn" class="btn-primary btn-primary--gold" style="padding: 14px 28px;">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> Find My Scent
+    </button>
+</div>
+
+<div class="quiz-modal-overlay" id="quizModalOverlay">
+  <div class="quiz-modal-box">
+    <button class="quiz-modal-close" id="quizModalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+
+    <div class="quiz-progress" id="quizProgress"></div>
+
+    <!-- Step 1 -->
+    <div class="quiz-step active" data-step="1">
+      <div class="quiz-question">When do you usually wear fragrance?</div>
+      <div class="quiz-options">
+        <button class="quiz-option" data-value="day">Daytime, everyday wear</button>
+        <button class="quiz-option" data-value="night">Evenings & nights out</button>
+        <button class="quiz-option" data-value="work">Work / office</button>
+        <button class="quiz-option" data-value="special">Special occasions</button>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="quiz-step" data-step="2">
+      <div class="quiz-question">Which scent family pulls you in?</div>
+      <div class="quiz-options">
+        <button class="quiz-option" data-value="fresh">Fresh & citrusy</button>
+        <button class="quiz-option" data-value="floral">Floral & soft</button>
+        <button class="quiz-option" data-value="woody">Woody & warm</button>
+        <button class="quiz-option" data-value="sweet">Sweet & gourmand</button>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="quiz-step" data-step="3">
+      <div class="quiz-question">Pick a vibe</div>
+      <div class="quiz-options">
+        <button class="quiz-option" data-value="bold">Bold & confident</button>
+        <button class="quiz-option" data-value="elegant">Elegant & refined</button>
+        <button class="quiz-option" data-value="playful">Playful & fun</button>
+        <button class="quiz-option" data-value="mysterious">Mysterious & seductive</button>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="quiz-step" data-step="4">
+      <div class="quiz-question">How long do you want it to last?</div>
+      <div class="quiz-options">
+        <button class="quiz-option" data-value="light">Light, close to skin</button>
+        <button class="quiz-option" data-value="moderate">Noticeable but not overpowering</button>
+        <button class="quiz-option" data-value="strong">Strong, all-day projection</button>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <div class="quiz-step" data-step="result">
+      <div class="quiz-result">
+        <div class="quiz-result-badge">Your Match</div>
+        <img id="resultImg" class="quiz-result-img" src="" alt="">
+        <div class="quiz-result-name" id="resultName"></div>
+        <div class="quiz-result-brand" id="resultBrand"></div>
+        <div class="quiz-result-price" id="resultPrice"></div>
+        <div class="quiz-result-desc" id="resultDesc"></div>
+        <a href="#" id="resultOrderBtn" class="btn-primary btn-primary--gold" style="display: inline-block; padding: 14px 32px;">
+          Order This Scent
+        </a>
+        <br>
+        <button class="quiz-restart" id="restartBtn">Retake the quiz</button>
+      </div>
+    </div>
+
+    <div class="quiz-nav">
+      <button class="quiz-back" id="quizBackBtn">
+        <i class="fa-solid fa-arrow-left"></i> Back
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .quiz-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(17,38,63,0.55);
+    backdrop-filter: blur(4px);
+    z-index: 3000;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .quiz-modal-overlay.active {
+    display: flex;
+  }
+  @media (min-width: 640px) {
+    .quiz-modal-overlay { align-items: center; }
+  }
+
+  .quiz-modal-box {
+    position: relative;
+    background: var(--cream, #FFF9F0);
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 24px 24px 0 0;
+    padding: 32px 24px 28px;
+    animation: quizSlideUp 0.3s ease;
+  }
+  @media (min-width: 640px) {
+    .quiz-modal-box { border-radius: 24px; padding: 36px 32px 32px; }
+  }
+  @keyframes quizSlideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .quiz-modal-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(17,38,63,0.06);
+    color: var(--velmora-navy, #11263F);
+    font-size: 14px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .quiz-progress { display: flex; gap: 6px; margin-bottom: 28px; margin-top: 8px; }
+  .quiz-progress span { flex: 1; height: 4px; border-radius: 4px; background: rgba(17,38,63,0.1); transition: background 0.3s; }
+  .quiz-progress span.done { background: var(--champagne-gold, #C89B4A); }
+
+  .quiz-step { display: none; animation: fadeUp 0.3s ease; }
+  .quiz-step.active { display: block; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  .quiz-question {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-weight: 600;
+    color: var(--velmora-navy, #11263F);
+    margin-bottom: 20px; text-align: center;
+  }
+  .quiz-options { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-option {
+    padding: 14px 18px;
+    border: 2px solid rgba(17,38,63,0.1);
+    border-radius: 14px;
+    background: white;
+    font-family: inherit; font-size: 14px;
+    color: var(--velmora-navy, #11263F);
+    text-align: left; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .quiz-option:hover { border-color: var(--champagne-gold, #C89B4A); background: rgba(200,155,74,0.06); }
+  .quiz-option.selected { border-color: var(--champagne-gold, #C89B4A); background: rgba(200,155,74,0.1); }
+
+  .quiz-nav { display: flex; justify-content: flex-start; margin-top: 20px; }
+  .quiz-back { background: none; border: none; color: rgba(17,38,63,0.5); font-size: 13px; cursor: pointer; padding: 8px 0; }
+  .quiz-back[style*="hidden"] {}
+
+  .quiz-result { text-align: center; }
+  .quiz-result-badge {
+    display: inline-block; padding: 5px 14px; border-radius: 50px;
+    background: rgba(200,155,74,0.12); color: var(--champagne-gold, #C89B4A);
+    font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .quiz-result-img { width: 140px; height: 140px; object-fit: cover; border-radius: 18px; margin: 0 auto 18px; display: block; }
+  .quiz-result-name { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 600; color: var(--velmora-navy, #11263F); margin-bottom: 6px; }
+  .quiz-result-brand { font-size: 13px; color: rgba(17,38,63,0.55); margin-bottom: 16px; }
+  .quiz-result-price { font-size: 18px; font-weight: 600; color: var(--champagne-gold, #C89B4A); margin-bottom: 8px; }
+  .quiz-result-desc { font-size: 14px; line-height: 1.7; color: rgba(17,38,63,0.75); margin-bottom: 22px; }
+  .quiz-restart { margin-top: 14px; background: none; border: none; color: rgba(17,38,63,0.5); font-size: 12px; text-decoration: underline; cursor: pointer; }
+</style>
+
+<script>
+(function() {
+  // ─────────────────────────────────────────────
+  // Map scent-family answers to real perfumes from the Best Sellers library
+  // ─────────────────────────────────────────────
+  const PERFUME_MATCHES = {
+    fresh:   { name: "Sauvage Inspired",              brand: "Dior",                      file: "photo/items/dior-sauvage.jpg",                                price: "$28.00", desc: "A powerful fresh spicy-aromatic fragrance with bergamot, lavender, and ambroxan — bold and versatile for day or night." },
+    floral:  { name: "Coco Mademoiselle Inspired",    brand: "Chanel",                    file: "photo/items/chanel-coco-mademoiselle.jpg",                    price: "$30.00", desc: "An elegant floral-oriental scent with orange, jasmine, and patchouli — sophisticated and timeless." },
+    woody:   { name: "Baccarat Rouge 540 Inspired",   brand: "Maison Francis Kurkdjian",  file: "photo/items/maison-francis-kurkdjian-baccarat-rouge-540.jpg", price: "$38.00", desc: "A luxurious amber-woody scent with saffron, cedar, and ambroxan — mysterious and intoxicating." },
+    sweet:   { name: "Vanilla 28 Inspired",            brand: "Kayali",                  file: "photo/items/kayali-vanilla-28.jpg",                           price: "$26.00", desc: "A warm sweet gourmand with vanilla, tonka bean, and amber — comforting and addictive." },
+    bleu:    { name: "Bleu de Chanel Inspired",        brand: "Bleu de Chanel",          file: "photo/items/bleu-de-chanel-eau-de-parfum-men.jpg",            price: "$28.00", desc: "A fresh woody-aromatic fragrance with citrus, incense, and cedar — refined and masculine." }
+  };
+
+  const overlay = document.getElementById('quizModalOverlay');
+  const openBtn = document.getElementById('openQuizBtn');
+  const closeBtn = document.getElementById('quizModalCloseBtn');
+  const steps = ["1", "2", "3", "4"];
+  let currentIndex = 0;
+  const answers = {};
+
+  const progressEl = document.getElementById('quizProgress');
+  progressEl.innerHTML = steps.map(() => '<span></span>').join('');
+  const progressBars = progressEl.querySelectorAll('span');
+
+  function updateProgress() {
+    progressBars.forEach((bar, i) => bar.classList.toggle('done', i <= currentIndex));
+  }
+
+  function showStep(stepKey) {
+    overlay.querySelectorAll('.quiz-step').forEach(el => {
+      el.classList.toggle('active', el.dataset.step === stepKey);
+    });
+    document.getElementById('quizBackBtn').style.visibility = (stepKey === "1") ? "hidden" : "visible";
+  }
+
+  function resetQuiz() {
+    currentIndex = 0;
+    for (const k in answers) delete answers[k];
+    overlay.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+    updateProgress();
+    showStep(steps[0]);
+  }
+
+  openBtn.addEventListener('click', () => {
+    resetQuiz();
+    overlay.classList.add('active');
+  });
+
+  closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.classList.remove('active');
+  });
+
+  overlay.querySelectorAll('.quiz-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const stepEl = btn.closest('.quiz-step');
+      const stepKey = stepEl.dataset.step;
+      answers[stepKey] = btn.dataset.value;
+      stepEl.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+
+      setTimeout(() => {
+        if (currentIndex < steps.length - 1) {
+          currentIndex++;
+          updateProgress();
+          showStep(steps[currentIndex]);
+        } else {
+          showResult();
+        }
+      }, 200);
+    });
+  });
+
+  document.getElementById('quizBackBtn').addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateProgress();
+      showStep(steps[currentIndex]);
+    }
+  });
+
+  function showResult() {
+    const family = answers["2"] || "floral";
+    const vibe = answers["3"] || "";
+    // Fresh scent + elegant vibe → recommend Bleu de Chanel instead
+    const match = (family === "fresh" && vibe === "elegant")
+      ? PERFUME_MATCHES.bleu
+      : PERFUME_MATCHES[family];
+
+    document.getElementById('resultImg').src = match.file;
+    document.getElementById('resultImg').alt = match.name;
+    document.getElementById('resultName').textContent = match.name;
+    document.getElementById('resultBrand').textContent = match.brand;
+    document.getElementById('resultPrice').innerHTML = `
+    <span class="price-line" style="justify-content:center;">
+        <span class="new-price">$10</span>
+        <span class="old-price">$12</span>
+        <span class="size-label">/50 ml</span>
+    </span>
+    <span class="price-line" style="justify-content:center;">
+        <span class="new-price">$15</span>
+        <span class="old-price">$18</span>
+        <span class="size-label">/100 ml</span>
+    </span>
+`;
+    document.getElementById('resultDesc').textContent = match.desc;
+
+    // Wire "Order This Scent" to the existing order modal
+    const orderBtn = document.getElementById('resultOrderBtn');
+    orderBtn.onclick = function(e) {
+      e.preventDefault();
+      openOrderModal(match.brand, match.name);
+      overlay.classList.remove('active');
+    };
+
+    showStep("result");
+    document.getElementById('quizBackBtn').style.visibility = "hidden";
+  }
+
+  document.getElementById('restartBtn').addEventListener('click', resetQuiz);
+})();
+</script>
+    <!-- ═══════════ BEST SELLERS ═══════════ -->
+    <section id="bestsellers" class="section-padding" style="position: relative; overflow: hidden;">
+        <div class="accent-mist accent-mist--turquoise" style="top: -40px; right: -60px; width: 340px; height: 340px;"></div>
+        <div class="container">
+            <div class="section-badge">Current Favorites</div>
+            <h2 class="section-title">Best <em>Sellers</em></h2>
+            <p class="section-sub" style="margin-bottom: 28px;">Swipe to explore. Tap any item to order.</p>
+        </div>
+        <div style="position: relative; width: 100%;">
+            <button class="scroll-arrow scroll-arrow--left" id="scrollLeftBtn" aria-label="Scroll Left">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="scroll-arrow scroll-arrow--right" id="scrollRightBtn" aria-label="Scroll Right">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <div class="products-scroll-wrapper" id="productsScroll">
+                <div class="products-scroll-track" id="productsTrack">
+                    <!-- Dior Sauvage -->
+                    <div class="product-card" onclick="openOrderModal('Dior','Sauvage Inspired')">
+                        <img src="photo/items/dior-sauvage.jpg" alt="Dior Sauvage" class="product-card-img">
+                        <div class="product-info">
+                            <div class="product-brand">Dior</div>
+                            <div class="product-title">Sauvage Inspired</div>
+                            <div class="product-price">
+    <span class="price-line">
+        <span class="new-price">$10</span>
+        <span class="old-price">$12</span>
+        <span class="size-label">/50 ml</span>
+    </span>
+    <span class="price-line">
+        <span class="new-price">$15</span>
+        <span class="old-price">$18</span>
+        <span class="size-label">/100 ml</span>
+    </span>
+</div>
+                            <button class="product-btn">Quick Order</button>
+                        </div>
+                    </div>
+                    <!-- Bleu de Chanel -->
+                    <div class="product-card" onclick="openOrderModal('Bleu de Chanel','Eau de Parfum Inspired')">
+                        <img src="photo/items/bleu-de-chanel-eau-de-parfum-men.jpg" alt="Bleu de Chanel" class="product-card-img">
+                        <div class="product-info">
+                            <div class="product-brand">Bleu de Chanel</div>
+                            <div class="product-title">Eau de Parfum Inspired</div>
+                            <div class="product-price">
+    <span class="price-line">
+        <span class="new-price">$10</span>
+        <span class="old-price">$12</span>
+        <span class="size-label">/50 ml</span>
+    </span>
+    <span class="price-line">
+        <span class="new-price">$15</span>
+        <span class="old-price">$18</span>
+        <span class="size-label">/100 ml</span>
+    </span>
+</div>
+                            <button class="product-btn">Quick Order</button>
+                        </div>
+                    </div>
+                    <!-- Baccarat Rouge 540 -->
+                    <div class="product-card" onclick="openOrderModal('Maison Francis Kurkdjian','Baccarat Rouge 540 Inspired')">
+                        <img src="photo/items/maison-francis-kurkdjian-baccarat-rouge-540.jpg" alt="Baccarat Rouge 540" class="product-card-img">
+                        <div class="product-info">
+                            <div class="product-brand">Maison Francis Kurkdjian</div>
+                            <div class="product-title">Baccarat Rouge 540 Inspired</div>
+                            <div class="product-price">
+    <span class="price-line">
+        <span class="new-price">$10</span>
+        <span class="old-price">$12</span>
+        <span class="size-label">/50 ml</span>
+    </span>
+    <span class="price-line">
+        <span class="new-price">$15</span>
+        <span class="old-price">$18</span>
+        <span class="size-label">/100 ml</span>
+    </span>
+</div>
+                            <button class="product-btn">Quick Order</button>
+                        </div>
+                    </div>
+                    <!-- Chanel Coco Mademoiselle -->
+                    <div class="product-card" onclick="openOrderModal('Chanel','Coco Mademoiselle Inspired')">
+                        <img src="photo/items/chanel-coco-mademoiselle.jpg" alt="Chanel Coco Mademoiselle" class="product-card-img">
+                        <div class="product-info">
+                            <div class="product-brand">Chanel</div>
+                            <div class="product-title">Coco Mademoiselle Inspired</div>
+                            <div class="product-price">
+    <span class="price-line">
+        <span class="new-price">$10</span>
+        <span class="old-price">$12</span>
+        <span class="size-label">/50 ml</span>
+    </span>
+    <span class="price-line">
+        <span class="new-price">$15</span>
+        <span class="old-price">$18</span>
+        <span class="size-label">/100 ml</span>
+    </span>
+</div>
+                            <button class="product-btn">Quick Order</button>
+                        </div>
+                    </div>
+                    <!-- Kayali Vanilla 28 -->
+                    <div class="product-card" onclick="openOrderModal('Kayali','Vanilla 28 Inspired')">
+                        <img src="photo/items/kayali-vanilla-28.jpg" alt="Kayali Vanilla 28" class="product-card-img">
+                        <div class="product-info">
+                            <div class="product-brand">Kayali</div>
+                            <div class="product-title">Vanilla 28 Inspired</div>
+                            <div class="product-price">
+    <span class="price-line">
+        <span class="new-price">$10</span>
+        <span class="old-price">$12</span>
+        <span class="size-label">/50 ml</span>
+    </span>
+    <span class="price-line">
+        <span class="new-price">$15</span>
+        <span class="old-price">$18</span>
+        <span class="size-label">/100 ml</span>
+    </span>
+</div>
+                            <button class="product-btn">Quick Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator"></div>
+        <div class="container" style="text-align: center; margin-top: 32px; margin-bottom: 24px;">
+            <a href="collection.html" class="btn-primary btn-primary--navy" style="display: inline-flex;">
+                View All Collections <i class="fa-solid fa-arrow-right" style="font-size: 12px; margin-left: 6px;"></i>
+            </a>
+        </div>
+        <div class="accent-line-divider"></div>
+    </section>
+
+    <!-- ═══════════ ABOUT & TIPS (MERGED) ═══════════ -->
+    <section id="about" class="about-section" style="min-height: auto;">
+        <picture class="about-bg">
+            <source srcset="photo/aboutusimg-pc-version.jpeg" media="(min-width: 768px)">
+            <img src="photo/about-us.jpg" alt="Velmora Story">
+        </picture>
+        <div class="about-overlay"></div>
+        <div class="about-content" style="max-width: 700px;">
+            <div class="section-badge">Our Story</div>
+            <h2 class="section-title">About <em>Us</em></h2>
+            <p style="margin-bottom: 40px;">
+                VELMORA is more than a fragrance — it is a presence you feel and an impression that remains. A Lebanese fragrance house created to bring together luxury, quality, and distinction through thoughtfully priced scents. We carefully select European fragrance oils to create refined scents with distinctive character, elegant projection, and lasting performance. Every order is prepared, bottled, and packaged with care — creating a complete experience worthy of the fragrance inside.
+            </p>
+
+            <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 32px;">
+                <div class="section-badge">Expert Advice</div>
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: white; margin-bottom: 24px;">Fragrance <em>Tips</em></h3>
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fa-solid fa-droplet"></i></div>
+                    <div>
+                        <h4>Pulse Points</h4>
+                        <p>Apply pure oils to your neck, wrists, and behind the ears where body heat helps diffuse the fragrance all day.</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fa-solid fa-sun-plant-wilt"></i></div>
+                    <div>
+                        <h4>Proper Storage</h4>
+                        <p>Keep your bottle away from direct sunlight and extreme temperatures to preserve the delicate top notes.</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <div>
+                        <h4>Scent Layering</h4>
+                        <p>Mix a drop of fresh citrus with a deeper woody scent to create your own signature blend effortlessly.</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div>
+                        <h4>Application Timing</h4>
+                        <p>Apply fragrance right after a shower when your skin is warm and slightly moist for the best absorption and lasting sillage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><br>,<br>  
+
+                <div class="unboxing-experience"><div class="section-badge">The Unboxing Experience</div>
+                <h2 class="section-title">Our <em>Packaging</em></h2></div>
+
+    <!-- ═══════════ PACKAGING ═══════════ -->
+    <section id="packaging" class="packaging-section section-padding" style="position: relative; overflow: hidden;">
+        <div class="accent-mist accent-mist--turquoise" style="bottom: 10px; left: -80px; width: 380px; height: 380px;"></div>
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 36px;">
+                
+            </div>
+            <div class="packaging-inner">
+                <div>
+                    <img src="photo/the-package.jpeg" alt="Velmora Packaging" class="packaging-img">
+                </div>
+                <div>
+                    <div class="pkg-feature">
+                        <div class="pkg-icon"><i class="fa-solid fa-box-open"></i></div>
+                        <div>
+                            <h4>Premium Gift-Ready Box</h4>
+                            <p>Every order arrives in a stunning luxury kraft box with shredded fill — making it the perfect gift for any occasion.</p>
+                        </div>
+                    </div>
+                    <div class="pkg-feature">
+                        <div class="pkg-icon"><i class="fa-solid fa-bottle-droplet"></i></div>
+                        <div>
+                            <h4>Signature Glass Bottle</h4>
+                            <p>Custom apothecary-style glass bottle with a handcrafted wooden cork stopper. Truly one of a kind.</p>
+                        </div>
+                    </div>
+                    <div class="pkg-feature">
+                        <div class="pkg-icon"><i class="fa-solid fa-tag"></i></div>
+                        <div>
+                            <h4>Personalized Label</h4>
+                            <p>Every bottle features a custom Velmora label with your bespoke scent profile — your own piece of luxury.</p>
+                        </div>
+                    </div>
+                    <div class="pkg-feature">
+                        <div class="pkg-icon"><i class="fa-solid fa-flask"></i></div>
+                        <div>
+                            <h4>High-Concentration Oil</h4>
+                            <p>Pure concentrated perfume oil — no alcohol dilution — delivering 12+ hours of lasting sillage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accent-line-divider" style="margin-top: 32px;"></div>
+    </section>
+
+    <!-- ═══════════ GIFT BOX ═══════════ -->
+    <section class="section-padding" style="background: var(--warm-ivory); border-top: 1px solid rgba(17,38,63,0.06); position: relative; overflow: hidden;">
+        <div class="accent-mist accent-mist--gold" style="top: -20px; right: -40px; width: 340px; height: 340px;"></div>
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 36px;">
+                <div class="section-badge">Exclusive Presentation</div>
+                <h2 class="section-title">Luxury <em>Gift Box</em></h2>
+            </div>
+            <div class="packaging-inner">
+                <div>
+                    <div style="border-radius: var(--r-md); overflow: hidden; box-shadow: 0 12px 36px rgba(17,38,63,0.08);">
+                        <img src="photo/gift-box.jpeg" alt="Velmora Gift Box" style="width: 100%; height: auto; display: block; object-fit: cover;">
+                    </div>
+                </div>
+                <div>
+                    <div class="pkg-feature">
+                        <div class="pkg-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                        <div>
+                            <h4>Package of 3 Bottles Available</h4>
+                            <p>Get a complete luxury experience with our curated set of three signature fragrances.</p>
+                        </div>
+                    </div>
+                    <div class="pkg-feature">
+                        <div class="pkg-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                        <div>
+                            <h4>Custom Printing Available</h4>
+                            <p>Add any name or special phrase on the perfume bottle for any occasion.</p>
+                        </div>
+                    </div>
+                    <div class="pkg-feature">
+                        <div class="pkg-icon"><i class="fa-solid fa-gift"></i></div>
+                        <div>
+                            <h4>Perfect for Gifting</h4>
+                            <p>Perfect for gifting, special occasions, and elegant surprises.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accent-line-divider" style="margin-top: 32px;"></div>
+    </section>
+
+    <!-- ═══════════ REVIEWS ═══════════ -->
+    <section id="reviews" class="reviews-section section-padding">
+        <div class="container" style="margin-bottom: 32px;">
+            <div class="section-badge">Client Reviews</div>
+            <h2 class="section-title">What Our Clients <em>Say</em></h2>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="marquee-row">
+            <div class="marquee-track" id="reviewRow1">
+                <div class="review-card">
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"I ordered the Chanel Chance inspired scent and received it the next day. The packaging alone was worth it — the bottle is stunning and the scent lasts all day!"</p>
+                    <div class="review-author">
+                        <div class="review-avatar">LR</div>
+                        <div><div class="review-name">Lara R.</div><div class="review-label">Verified Client</div></div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"Ordered the Creed Aventus inspired version. Honestly better than the original in terms of longevity. The wooden cap is such a classy touch. Will order again!"</p>
+                    <div class="review-author">
+                        <div class="review-avatar">KM</div>
+                        <div><div class="review-name">Karim M.</div><div class="review-label">Verified Client</div></div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i></div>
+                    <p class="review-text">"The WhatsApp ordering was so easy and fast. I described what I wanted and they confirmed within minutes. The gift box is perfect for presents!"</p>
+                    <div class="review-author">
+                        <div class="review-avatar">NS</div>
+                        <div><div class="review-name">Nour S.</div><div class="review-label">Verified Client</div></div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"Absolutely mind-blowing quality. The concentration of the oil means I only need a tiny drop and my whole office smells incredible all day."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">EH</div>
+                        <div><div class="review-name">Elie H.</div><div class="review-label">Verified Client</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="marquee-row">
+            <div class="marquee-track" id="reviewRow2">
+                <div class="review-card">
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"I've bought from other 'inspired by' places before, but Velmora is different. The presentation feels truly high-end, and the scent notes are perfectly balanced."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">SD</div>
+                        <div><div class="review-name">Sarah D.</div><div class="review-label">Verified Client</div></div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"My wife loved the Vanilla 28 inspired scent. Delivery to Tripoli took less than 24 hours. Great customer service and an amazing product."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">AK</div>
+                        <div><div class="review-name">Ahmad K.</div><div class="review-label">Verified Client</div></div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"Best discovery this year. Got the Baccarat Rouge 540 version and I'm obsessed. Quality rivals the original at a fraction of the price."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">MH</div>
+                        <div><div class="review-name">Maya H.</div><div class="review-label">Verified Client</div></div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"Ordered three bottles for my whole family. Incredible value and the packaging makes each one feel like a luxury gift. 10/10 experience."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">RJ</div>
+                        <div><div class="review-name">Rami J.</div><div class="review-label">Verified Client</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ CTA BANNER ═══════════ -->
+    <section class="cta-banner">
+        <h2 class="section-title">Ready to Find <em>Your Scent?</em></h2>
+        <p>Message us on WhatsApp and we'll help you choose the perfect fragrance.</p>
+        <a href="https://wa.me/96181772615" class="btn-primary btn-primary--gold">
+            <i class="fa-brands fa-whatsapp"></i> Start Your Order
+        </a>
+    </section>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-top">
+                    <a href="#" class="logo-wrap">
+                        <img src="photo/logo.jpeg" alt="Velmora" class="logo-img">
+                        <span class="logo-text">VELMORA</span>
+                    </a>
+                    <p class="footer-desc">Velmora Fragrancias crafts luxury-inspired concentrated oil perfumes — your favourite designer scents, reimagined in our signature packaging.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/velmorafragrancias/?hl=en" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61591699116306" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="mailto:velmorafragrances6@gmail.com" class="social-link" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://wa.me/96181772615" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-grid-links">
+                    <div>
+                        <div class="footer-col-title">Quick Links</div>
+                        <div class="footer-links">
+                            <a href="#bestsellers">Shop Collection</a>
+                            <a href="#packaging">Our Packaging</a>
+                            <a href="#reviews">Reviews</a>
+                            <a href="#about">About Us</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="footer-col-title">Categories</div>
+                        <div class="footer-links">
+                            <a href="collection.html">For Him</a>
+                            <a href="collection.html">For Her</a>
+                            <a href="collection.html">Unisex</a>
+                            <a href="collection.html">Gift Sets</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-newsletter">
+                    <div class="footer-col-title">Stay Updated</div>
+                    <p>Subscribe for new scent drops and exclusive offers.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('🎉 Subscribed! Thank you.');">
+                        <input type="email" class="newsletter-input" placeholder="Your email" required>
+                        <button type="submit" class="newsletter-btn">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Velmora Fragrancias. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════ FLOATING WHATSAPP ═══════════ -->
+    <a href="https://wa.me/96181772615" class="float-wa" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ═══════════ ORDER MODAL ═══════════ -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-box" style="position: relative;">
+            <button class="modal-close" id="modalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="modal-title">Place Your Order</h2>
+            <div class="modal-product-preview">
+                <div class="modal-thumb"><i class="fa-solid fa-bottle-droplet"></i></div>
+                <div>
+                    <div class="modal-product-brand" id="modalBrand">Brand</div>
+                    <div class="modal-product-name" id="modalName">Perfume Name</div>
+                </div>
+            </div>
+            <div class="modal-form-group">
+                <label>Size</label>
+                <select id="modalSize">
+                    <option value="50ml">50 ml</option>
+                    <option value="100ml" selected>100 ml</option>
+                </select>
+            </div>
+            <div class="modal-form-group">
+                <label>Your Name</label>
+                <input type="text" id="modalClientName" placeholder="Full name">
+            </div>
+            <div class="modal-form-group">
+                <label>Your Phone / WhatsApp</label>
+                <input type="tel" id="modalClientPhone" placeholder="+961 81772615">
+            </div>
+            <div class="modal-form-group">
+                <label>Delivery Address</label>
+                <div style="position: relative; display: flex; flex-direction: column; gap: 8px;">
+                    <input type="text" id="modalClientAddress" placeholder="City, area, building…">
+                    <button type="button" id="getLocationBtn" style="
+                        width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;
+                        padding: 12px; border: 1.5px solid var(--turquoise); border-radius: var(--r-sm);
+                        color: var(--turquoise); font-size: 13px; font-weight: 600; background: transparent;
+                        transition: all 0.2s;
+                    ">
+                        <i class="fa-solid fa-location-crosshairs"></i> Pinpoint My Location (Google Maps)
+                    </button>
+                </div>
+            </div>
+            <button class="btn-submit" id="modalSendBtn" style="background: var(--turquoise); color: white; border-radius: 50px; width: 100%;">
+                Order
+            </button>
+        </div>
+    </div>
+
+    <!-- ═══════════ TOAST ═══════════ -->
+    <div id="toastEl" style="
+        position:fixed; bottom:90px; left:50%; transform:translateX(-50%) translateY(20px);
+        background:rgba(255,249,240,.95); backdrop-filter:blur(16px);
+        border:1px solid rgba(17,38,63,.12); border-radius:50px;
+        padding:12px 24px; color:var(--velmora-navy); font-size:14px; font-weight:500;
+        box-shadow:0 8px 32px rgba(0,0,0,.12);
+        opacity:0; pointer-events:none; transition:all .35s;
+        z-index:2000; white-space:nowrap;
+    "></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
