@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const WHATSAPP_NUMBER = '96181772615';
@@ -206,6 +208,17 @@ document.addEventListener('DOMContentLoaded', () => {
             toast.style.transform = 'translateX(-50%) translateY(20px)';
         }, 3000);
     };
+
+    // ── Scroll reveal ──
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(el => io.observe(el));
+    } else {
+        revealEls.forEach(el => el.classList.add('in'));
+    }
 
     // ── Close modal / drawer with Escape ──
     document.addEventListener('keydown', (e) => {
