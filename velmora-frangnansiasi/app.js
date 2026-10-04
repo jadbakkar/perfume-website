@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const WHATSAPP_NUMBER = '96181772615';
+
     // ── Header Scroll ──
     const header = document.getElementById('mainHeader');
     window.addEventListener('scroll', () => {
@@ -169,6 +171,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const phone = document.getElementById('modalClientPhone').value;
             const address = document.getElementById('modalClientAddress').value;
 
+            if (!clientName.trim() || !phone.trim() || !address.trim()) {
+                showToast('⚠️ Please fill in your name, phone and address.');
+                return;
+            }
+
             const msg = `🌿 *New Velmora Order*\n\n` +
                 `*Perfume:* ${brand} — ${name}\n` +
                 `*Size:* ${size}\n` +
@@ -176,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `*Phone:* ${phone}\n` +
                 `*Address:* ${address}`;
 
-            const url = `https://wa.me/96170917681?text=${encodeURIComponent(msg)}`;
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
             window.open(url, '_blank');
 
             orderModal.classList.remove('show');
@@ -186,17 +193,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ── Toast ──
+    let toastTimer;
     window.showToast = (msg) => {
         const toast = document.getElementById('toastEl');
         if (!toast) return;
+        clearTimeout(toastTimer);
         toast.textContent = msg;
         toast.style.opacity = '1';
         toast.style.transform = 'translateX(-50%) translateY(0)';
-        setTimeout(() => {
+        toastTimer = setTimeout(() => {
             toast.style.opacity = '0';
             toast.style.transform = 'translateX(-50%) translateY(20px)';
         }, 3000);
     };
+
+    // ── Close modal / drawer with Escape ──
+    document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Escape') return;
+        if (orderModal && orderModal.classList.contains('show')) {
+            orderModal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+        if (mobileDrawer && mobileDrawer.classList.contains('open')) toggleDrawer();
+        const quiz = document.getElementById('quizModalOverlay');
+        if (quiz) quiz.classList.remove('active');
+    });
+
+    // ── Keyboard access for clickable product cards ──
+    window.makeCardAccessible = (card) => {
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+        });
+    };
+    document.querySelectorAll('.product-card').forEach(window.makeCardAccessible);
+
+    // ── Active nav link on scroll ──
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    const sections = [...navLinks].map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+    if (sections.length) {
+        window.addEventListener('scroll', () => {
+            const pos = window.scrollY + header.offsetHeight + 80;
+            let current = sections[0];
+            sections.forEach(sec => { if (sec.offsetTop <= pos) current = sec; });
+            navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
+        }, { passive: true });
+    }
 
     // ── Smooth Scroll for Nav Links ──
     document.querySelectorAll('a[href^="#"]').forEach(link => {

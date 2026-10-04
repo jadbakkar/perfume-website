@@ -23,9 +23,7 @@
     <!-- ═══════════ HEADER ═══════════ -->
     <header class="header" id="mainHeader">
         <div class="ticker-ribbon">
-            <marquee scrollamount="4">
-                ✨FREE delivery for your orders from the website &nbsp;•&nbsp; FREE Discovery Set with any 100ml purchase &nbsp;•&nbsp; 🚚 Nationwide Delivery across Lebanon &nbsp;•&nbsp; 💧 Pure Oil — 12+ Hours Lasting&nbsp;•&nbsp; free delivery for your orders from the website ✨
-            </marquee>
+            <div class="ticker-track"><span>✨FREE delivery for your orders from the website &nbsp;•&nbsp; FREE Discovery Set with any 100ml purchase &nbsp;•&nbsp; 🚚 Nationwide Delivery across Lebanon &nbsp;•&nbsp; 💧 Pure Oil — 12+ Hours Lasting&nbsp;•&nbsp; free delivery for your orders from the website ✨</span><span aria-hidden="true">✨FREE delivery for your orders from the website &nbsp;•&nbsp; FREE Discovery Set with any 100ml purchase &nbsp;•&nbsp; 🚚 Nationwide Delivery across Lebanon &nbsp;•&nbsp; 💧 Pure Oil — 12+ Hours Lasting&nbsp;•&nbsp; free delivery for your orders from the website ✨</span></div>
         </div>
         <div class="header-inner">
             <a href="#" class="logo-wrap">
@@ -91,8 +89,6 @@
                 <a href="#bestsellers" class="btn-primary btn-primary--gold">
                     <i class="fa-solid fa-bag-shopping"></i> Shop Now
                 </a>
-                
-                </a>
             </div>
         </div>
         <div class="scroll-hint"><i class="fa-solid fa-chevron-down"></i></div>
@@ -114,7 +110,7 @@
 
 <div class="quiz-modal-overlay" id="quizModalOverlay">
   <div class="quiz-modal-box">
-    <button class="quiz-modal-close" id="quizModalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    <button class="quiz-modal-close" id="quizModalCloseBtn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
 
     <div class="quiz-progress" id="quizProgress"></div>
 
@@ -266,7 +262,6 @@
 
   .quiz-nav { display: flex; justify-content: flex-start; margin-top: 20px; }
   .quiz-back { background: none; border: none; color: rgba(17,38,63,0.5); font-size: 13px; cursor: pointer; padding: 8px 0; }
-  .quiz-back[style*="hidden"] {}
 
   .quiz-result { text-align: center; }
   .quiz-result-badge {
@@ -289,12 +284,16 @@
   // Map scent-family answers to real perfumes from the Best Sellers library
   // ─────────────────────────────────────────────
   const PERFUME_MATCHES = {
-    fresh:   { name: "Sauvage Inspired",              brand: "Dior",                      file: "photo/items/dior-sauvage.jpg",                                price: "$28.00", desc: "A powerful fresh spicy-aromatic fragrance with bergamot, lavender, and ambroxan — bold and versatile for day or night." },
-    floral:  { name: "Coco Mademoiselle Inspired",    brand: "Chanel",                    file: "photo/items/chanel-coco-mademoiselle.jpg",                    price: "$30.00", desc: "An elegant floral-oriental scent with orange, jasmine, and patchouli — sophisticated and timeless." },
-    woody:   { name: "Baccarat Rouge 540 Inspired",   brand: "Maison Francis Kurkdjian",  file: "photo/items/maison-francis-kurkdjian-baccarat-rouge-540.jpg", price: "$38.00", desc: "A luxurious amber-woody scent with saffron, cedar, and ambroxan — mysterious and intoxicating." },
-    sweet:   { name: "Vanilla 28 Inspired",            brand: "Kayali",                  file: "photo/items/kayali-vanilla-28.jpg",                           price: "$26.00", desc: "A warm sweet gourmand with vanilla, tonka bean, and amber — comforting and addictive." },
-    bleu:    { name: "Bleu de Chanel Inspired",        brand: "Bleu de Chanel",          file: "photo/items/bleu-de-chanel-eau-de-parfum-men.jpg",            price: "$28.00", desc: "A fresh woody-aromatic fragrance with citrus, incense, and cedar — refined and masculine." }
+    fresh:   { name: "Sauvage Inspired",              brand: "Dior",                      file: "photo/items/dior-sauvage.jpg", desc: "A powerful fresh spicy-aromatic fragrance with bergamot, lavender, and ambroxan — bold and versatile for day or night." },
+    floral:  { name: "Coco Mademoiselle Inspired",    brand: "Chanel",                    file: "photo/items/chanel-coco-mademoiselle.jpg", desc: "An elegant floral-oriental scent with orange, jasmine, and patchouli — sophisticated and timeless." },
+    woody:   { name: "Baccarat Rouge 540 Inspired",   brand: "Maison Francis Kurkdjian",  file: "photo/items/maison-francis-kurkdjian-baccarat-rouge-540.jpg", desc: "A luxurious amber-woody scent with saffron, cedar, and ambroxan — mysterious and intoxicating." },
+    sweet:   { name: "Vanilla 28 Inspired",            brand: "Kayali",                  file: "photo/items/kayali-vanilla-28.jpg", desc: "A warm sweet gourmand with vanilla, tonka bean, and amber — comforting and addictive." },
+    bleu:    { name: "Bleu de Chanel Inspired",        brand: "Bleu de Chanel",          file: "photo/items/bleu-de-chanel-eau-de-parfum-men.jpg", desc: "A fresh woody-aromatic fragrance with citrus, incense, and cedar — refined and masculine." }
   };
+
+  const PRICE_HTML = `
+    <span class="price-line" style="justify-content:center;"><span class="new-price">$10</span> <span class="old-price">$12</span> <span class="size-label">/50 ml</span></span>
+    <span class="price-line" style="justify-content:center;"><span class="new-price">$15</span> <span class="old-price">$18</span> <span class="size-label">/100 ml</span></span>`;
 
   const overlay = document.getElementById('quizModalOverlay');
   const openBtn = document.getElementById('openQuizBtn');
@@ -367,27 +366,17 @@
   function showResult() {
     const family = answers["2"] || "floral";
     const vibe = answers["3"] || "";
-    // Fresh scent + elegant vibe → recommend Bleu de Chanel instead
-    const match = (family === "fresh" && vibe === "elegant")
-      ? PERFUME_MATCHES.bleu
-      : PERFUME_MATCHES[family];
+    const longevity = answers["4"] || "";
+    // Fresh + elegant (or light wear) → Bleu de Chanel; sweet/floral + strong/mysterious stays on family pick
+    let match = PERFUME_MATCHES[family];
+    if (family === "fresh" && (vibe === "elegant" || longevity === "light")) match = PERFUME_MATCHES.bleu;
+    if (family === "floral" && vibe === "mysterious") match = PERFUME_MATCHES.woody;
 
     document.getElementById('resultImg').src = match.file;
     document.getElementById('resultImg').alt = match.name;
     document.getElementById('resultName').textContent = match.name;
     document.getElementById('resultBrand').textContent = match.brand;
-    document.getElementById('resultPrice').innerHTML = `
-    <span class="price-line" style="justify-content:center;">
-        <span class="new-price">$10</span>
-        <span class="old-price">$12</span>
-        <span class="size-label">/50 ml</span>
-    </span>
-    <span class="price-line" style="justify-content:center;">
-        <span class="new-price">$15</span>
-        <span class="old-price">$18</span>
-        <span class="size-label">/100 ml</span>
-    </span>
-`;
+    document.getElementById('resultPrice').innerHTML = PRICE_HTML;
     document.getElementById('resultDesc').textContent = match.desc;
 
     // Wire "Order This Scent" to the existing order modal
@@ -554,7 +543,7 @@
                 VELMORA is more than a fragrance — it is a presence you feel and an impression that remains. A Lebanese fragrance house created to bring together luxury, quality, and distinction through thoughtfully priced scents. We carefully select European fragrance oils to create refined scents with distinctive character, elegant projection, and lasting performance. Every order is prepared, bottled, and packaged with care — creating a complete experience worthy of the fragrance inside.
             </p>
 
-            <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 32px;">
+            <div id="tips" style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 32px;">
                 <div class="section-badge">Expert Advice</div>
                 <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: white; margin-bottom: 24px;">Fragrance <em>Tips</em></h3>
                 <div class="tip-item">
@@ -587,17 +576,15 @@
                 </div>
             </div>
         </div>
-    </section><br>,<br>  
-
-                <div class="unboxing-experience"><div class="section-badge">The Unboxing Experience</div>
-                <h2 class="section-title">Our <em>Packaging</em></h2></div>
+    </section>
 
     <!-- ═══════════ PACKAGING ═══════════ -->
     <section id="packaging" class="packaging-section section-padding" style="position: relative; overflow: hidden;">
         <div class="accent-mist accent-mist--turquoise" style="bottom: 10px; left: -80px; width: 380px; height: 380px;"></div>
         <div class="container">
-            <div style="text-align: center; margin-bottom: 36px;">
-                
+            <div class="unboxing-experience">
+                <div class="section-badge">The Unboxing Experience</div>
+                <h2 class="section-title">Our <em>Packaging</em></h2>
             </div>
             <div class="packaging-inner">
                 <div>
@@ -834,10 +821,10 @@
     </a>
 
     <!-- ═══════════ ORDER MODAL ═══════════ -->
-    <div class="modal-overlay" id="orderModal">
+    <div class="modal-overlay" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
         <div class="modal-box" style="position: relative;">
-            <button class="modal-close" id="modalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
-            <h2 class="modal-title">Place Your Order</h2>
+            <button class="modal-close" id="modalCloseBtn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="modal-title" id="orderModalTitle">Place Your Order</h2>
             <div class="modal-product-preview">
                 <div class="modal-thumb"><i class="fa-solid fa-bottle-droplet"></i></div>
                 <div>
@@ -846,22 +833,22 @@
                 </div>
             </div>
             <div class="modal-form-group">
-                <label>Size</label>
+                <label for="modalSize">Size</label>
                 <select id="modalSize">
                     <option value="50ml">50 ml</option>
                     <option value="100ml" selected>100 ml</option>
                 </select>
             </div>
             <div class="modal-form-group">
-                <label>Your Name</label>
+                <label for="modalClientName">Your Name</label>
                 <input type="text" id="modalClientName" placeholder="Full name">
             </div>
             <div class="modal-form-group">
-                <label>Your Phone / WhatsApp</label>
+                <label for="modalClientPhone">Your Phone / WhatsApp</label>
                 <input type="tel" id="modalClientPhone" placeholder="+961 81772615">
             </div>
             <div class="modal-form-group">
-                <label>Delivery Address</label>
+                <label for="modalClientAddress">Delivery Address</label>
                 <div style="position: relative; display: flex; flex-direction: column; gap: 8px;">
                     <input type="text" id="modalClientAddress" placeholder="City, area, building…">
                     <button type="button" id="getLocationBtn" style="
