@@ -1,576 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Browse the full Velmora Fragrancias catalog of luxury-inspired perfume oils by brand.">
-    <title>Velmora Fragrancias | Full Collection</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="index.css">
-    <style>
-
-        .search-box {
-            position: relative;
-            width: 100%;
-        }
-        .search-container {
-            max-width: 600px;
-            margin: 0 auto 40px;
-            padding: 12px 20px;
-            position: sticky;
-            top: 60px;
-            z-index: 999;
-            background: transparent;
-        }
-
-        @media (min-width: 768px) {
-            .search-container {
-                max-width: 320px;
-                width: 100%;
-                flex: 1 1 320px;
-                margin: 0;
-                padding: 0;
-                position: static; /* header itself will be sticky */
-            }
-        }
-        .search-input {
-            width: 100%;
-            padding: 16px 50px 16px 20px;
-            border: 2px solid rgba(17,38,63,0.1);
-            border-radius: 50px;
-            font-family: inherit;
-            font-size: 15px;
-            background: white;
-            color: var(--velmora-navy);
-            transition: all 0.2s;
-        }
-        .search-input:focus {
-            outline: none;
-            border-color: var(--champagne-gold);
-            box-shadow: 0 4px 16px rgba(200,155,74,0.15);
-        }
-        .search-icon {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--champagne-gold);
-            font-size: 18px;
-            pointer-events: none;
-        }
-        .collection-container {
-            max-width: var(--max-w);
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .brand-section {
-            margin-bottom: 48px;
-        }
-        .brand-header {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--velmora-navy);
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--champagne-gold);
-            display: inline-block;
-        }
-        .collection-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-        }
-        .collection-grid .product-card {
-            flex: none;
-            max-width: none;
-        }
-        .collection-grid .product-card-img {
-            height: 180px;
-        }
-        @media (min-width: 768px) {
-            .collection-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 24px;
-            }
-            .collection-grid .product-card-img {
-                height: 260px;
-            }
-            .brand-header {
-                font-size: 32px;
-            }
-        }
-        @media (min-width: 1024px) {
-            .collection-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        .no-results {
-            text-align: center;
-            padding: 60px 20px;
-            color: rgba(17,38,63,0.5);
-            font-size: 16px;
-        }
-        .no-results i {
-            font-size: 48px;
-            color: var(--champagne-gold);
-            margin-bottom: 16px;
-            display: block;
-        }
-        @media (max-width: 767px) {
-    .header-inner {
-        flex-wrap: wrap;
-    }
-    .search-container {
-        order: 3;
-        width: 100%;
-        position: static;
-        padding: 12px 0;
-    }
-}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velmora Fragrancias | The Complete Collection</title>
+<meta name="description" content="Browse the complete Velmora Fragrancias collection — 130 luxury-inspired perfume oils, by brand.">
+<meta name="theme-color" content="#0A1828">
+<meta property="og:title" content="Velmora Fragrancias | Luxury Inspired Scents">
+<meta property="og:description" content="Choose the big-brand perfume that speaks to you. We recreate it with our own exclusive packaging and high-concentration oils.">
+<meta property="og:image" content="https://velmora-fragrancias.netlify.app/assets/img/main.hrro.jpeg">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/collection.css">
+<script>document.documentElement.classList.add('js','no-preloader');</script>
 </head>
 <body>
-    <!-- HEADER -->
-   <header class="header header--solid" id="mainHeader">
-    <div class="header-inner">
-        <a href="index.html" class="logo-wrap">
-            <img src="photo/logo.jpeg" alt="Velmora" class="logo-img">
-            <span class="logo-text">VELMORA</span>
-        </a>
-        <div class="search-container" id="searchContainer">
-            <div class="search-box">
-                <input type="text" class="search-input" id="searchInput" placeholder="Search by brand or fragrance name..." autocomplete="off">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            </div>
-        </div>
-        <div class="header-right">
-            <a href="index.html" class="btn-primary btn-primary--gold" style="padding: 10px 20px; font-size: 12px;">
-                <i class="fa-solid fa-arrow-left"></i> Back
-            </a>
-        </div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ═════════ HEADER ═════════ -->
+<header class="site-header" id="siteHeader" data-solid>
+  <div class="bar">
+    <nav class="bar-nav" aria-label="Primary">
+      <a href="index.html#edition">Signature</a>
+      <a href="index.html#story">Story</a>
+      <a href="index.html#craft">Craft</a>
+      <a href="index.html#voices">Voices</a>
+    </nav>
+    <a href="index.html" class="brand" aria-label="Velmora home">
+      <img class="brand-mark" src="assets/img/logo.jpeg" alt="">
+      <span class="brand-word">VELMORA</span>
+    </a>
+    <div class="bar-right">
+      <a href="index.html" class="nav-text">Home</a>
+      <a href="index.html#finder" class="btn btn--sm">Find my scent</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span class="burger"><i></i><i></i></span><span>Menu</span></button>
     </div>
+  </div>
 </header>
 
-<section class="section-padding" style="padding-top: 120px;">
-    <div class="container" style="margin-bottom: 32px; text-align: center;">
-        <div class="section-badge">Full Catalog</div>
-        <h1 class="section-title">All <em>Collections</em></h1>
-        <p class="section-sub" style="margin: 0 auto;">Explore our complete range of luxury-inspired scents. Tap any item to order.</p>
+<!-- ═════════ FULL-SCREEN MENU ═════════ -->
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="drawer-top">
+    <span class="brand"><img class="brand-mark" src="assets/img/logo.jpeg" alt=""><span class="brand-word">VELMORA</span></span>
+    <button class="drawer-close" id="drawerClose"><span>Close</span><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="index.html"><small>01</small><span>Home</span></a>
+    <a href="index.html#edition"><small>02</small><span>Signature Edit</span></a>
+    <a href="index.html#story"><small>03</small><span>Our Story</span></a>
+    <a href="index.html#craft"><small>04</small><span>Craft &amp; Packaging</span></a>
+    <a href="index.html#voices"><small>05</small><span>Reviews</span></a>
+    <a href="collection.html"><small>06</small><span>Full Collection</span></a>
+  </nav>
+  <div class="drawer-foot">
+    <div class="social">
+      <a href="https://www.instagram.com/velmorafragrancias/?hl=en" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61591699116306" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="mailto:velmorafragrances6@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://wa.me/96181772615" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
+    <span>velmorafragrances6@gmail.com</span>
+  </div>
+</div>
 
-    <div class="collection-container" id="collectionContainer"></div>
+<main>
+<section class="c-hero">
+  <div class="wrap">
+    <p class="eyebrow">Full catalogue</p>
+    <h1 class="h-display">The complete <em>collection.</em></h1>
+    <p class="lead">Every scent, inspired by the houses you love — recreated in pure concentrated oil. Tap any fragrance to order.</p>
+    <div class="search">
+      <input type="search" id="search" placeholder="Search a brand or fragrance…" autocomplete="off" aria-label="Search fragrances">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <p class="count" id="count"></p>
+  </div>
 </section>
+<nav class="az" aria-label="Jump to letter"><div class="az-in" id="az"></div></nav>
+<section class="c-main"><div class="wrap" id="results"></div></section>
+</main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom" style="border: none; padding-top: 0;">
-                <p>&copy; 2026 Velmora Fragrancias. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/96181772615" class="float-wa" aria-label="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- ORDER MODAL -->
-    <div class="modal-overlay" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
-        <div class="modal-box" style="position: relative;">
-            <button class="modal-close" id="modalCloseBtn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-            <h2 class="modal-title" id="orderModalTitle">Place Your Order</h2>
-            <div class="modal-product-preview">
-                <div class="modal-thumb"><i class="fa-solid fa-bottle-droplet"></i></div>
-                <div>
-                    <div class="modal-product-brand" id="modalBrand">Brand</div>
-                    <div class="modal-product-name" id="modalName">Perfume Name</div>
-                </div>
-            </div>
-            <div class="modal-form-group">
-                <label for="modalSize">Size</label>
-                <select id="modalSize">
-                    <option value="50ml">50 ml — $10.00</option>
-                    <option value="100ml" selected>100 ml — $15.00</option>
-                </select>
-            </div>
-            <div class="modal-form-group">
-                <label for="modalClientName">Your Name</label>
-                <input type="text" id="modalClientName" placeholder="Full name">
-            </div>
-            <div class="modal-form-group">
-                <label for="modalClientPhone">Your Phone / WhatsApp</label>
-                <input type="tel" id="modalClientPhone" placeholder="+961 81772615">
-            </div>
-            <div class="modal-form-group">
-                <label for="modalClientAddress">Delivery Address</label>
-                <div style="position: relative; display: flex; flex-direction: column; gap: 8px;">
-                    <input type="text" id="modalClientAddress" placeholder="City, area, building…">
-                    <button type="button" id="getLocationBtn" style="
-                        width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;
-                        padding: 12px; border: 1.5px solid var(--turquoise); border-radius: var(--r-sm);
-                        color: var(--turquoise); font-size: 13px; font-weight: 600; background: transparent;
-                        transition: all 0.2s;
-                    ">
-                        <i class="fa-solid fa-location-crosshairs"></i> Pinpoint My Location (Google Maps)
-                    </button>
-                </div>
-            </div>
-            <button class="btn-submit" id="modalSendBtn" style="background: var(--turquoise); color: white; border-radius: 50px; width: 100%;">
-                Order
-            </button>
-        </div>
+<!-- ═════════ FOOTER ═════════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <a href="index.html" class="brand"><img class="brand-mark" src="assets/img/logo.jpeg" alt=""><span class="brand-word">VELMORA</span></a>
+      <p>Velmora Fragrancias crafts luxury-inspired concentrated oil perfumes — your favourite designer scents, reimagined in our signature packaging.</p>
+      <div class="social" style="margin-top:24px">
+        <a href="https://www.instagram.com/velmorafragrancias/?hl=en" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61591699116306" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="mailto:velmorafragrances6@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://wa.me/96181772615" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
     </div>
-
-    <!-- TOAST -->
-    <div id="toastEl" style="
-        position:fixed; bottom:90px; left:50%; transform:translateX(-50%) translateY(20px);
-        background:rgba(255,249,240,.95); backdrop-filter:blur(16px);
-        border:1px solid rgba(17,38,63,.12); border-radius:50px;
-        padding:12px 24px; color:var(--velmora-navy); font-size:14px; font-weight:500;
-        box-shadow:0 8px 32px rgba(0,0,0,.12);
-        opacity:0; pointer-events:none; transition:all .35s;
-        z-index:2000; white-space:nowrap;
-    "></div>
-
-    <script src="app.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Product data organized by brand
-            const products = [// Azzaro
-                { brand: 'Azzaro', name: 'Chrome', file: 'azzaro-chrome-men.jpeg' },
-{ brand: 'Azzaro', name: 'The Most Wanted', file: 'azzaro-the-most-wanted-men.jpeg' },
-{ brand: 'Azzaro', name: 'Wanted by Night', file: 'azzaro-wanted-by-night-men.jpeg' },
-{ brand: 'Azzaro', name: 'Wanted', file: 'azzaro-wanted-men.jpeg' },
-{ brand: 'Azzaro', name: 'Chrome Extreme', file: 'azzaro-chrome-extreme-men.jpg' },
-
-// Paco Rabanne
-{ brand: 'Rabanne', name: '1 Million Gold', file: 'paco-rabanne-1-million-gold.jpg' },
-
-// Bleu de Chanel
-{ brand: 'Chanel', name: 'Bleu de Chanel Eau de Parfum', file: 'bleu-de-chanel-eau-de-parfum-men.jpg' },
-
-// Boss
-{ brand: 'Boss', name: 'The Scent', file: 'boss-the-scent.jpg' },
-
-// Britney Spears
-{ brand: 'Britney Spears', name: 'Fantasy', file: 'britney-spears-fantasy-woman.jpg' },
-
-// Burberry
-{ brand: 'Burberry', name: 'Hero', file: 'burberry-hero-men.jpeg' },
-{ brand: 'Burberry', name: 'Touch', file: 'burberry-touch-men.jpeg' },
-{ brand: 'Burberry', name: 'Woman', file: 'burberry-woman-woman.jpeg' },
-{ brand: 'Burberry', name: 'Her', file: 'burberry-her-woman.jpg' },
-{ brand: 'Burberry', name: 'Her Elixir', file: 'burberry-her-elixir-woman.jpg' },
-{ brand: 'Burberry', name: 'Goddess', file: 'burberry-goddes-woman.jpg' },
-
-// Bvlgari
-{ brand: 'Bvlgari', name: 'Aqva Marine', file: 'bvlgari-aqva-marine-men.jpg' },
-{ brand: 'Bvlgari', name: 'Goldea', file: 'bvlgari-goldea-woman.jpg' },
-{ brand: 'Bvlgari', name: 'Man in Black', file: 'bvlgari-man-in-black-men.jpg' },
-{ brand: 'Bvlgari', name: 'Omnia Crystaline', file: 'bvlgari-omnia-crystaline-woman.jpg' },
-{ brand: 'Bvlgari', name: 'Tygar', file: 'bvlgari-tygar-men.jpg' },
-
-// Calvin Klein
-{ brand: 'Calvin Klein', name: 'CK One', file: 'calvin-klein-ck-one.jpg' },
-{ brand: 'Calvin Klein', name: 'Euphoria', file: 'calvin-klein-euphoria.jpg' },
-
-// Carolina Herrera
-{ brand: 'Carolina Herrera', name: '212 VIP Black', file: 'carolina-herrera-212-vip-black.jpg' },
-{ brand: 'Carolina Herrera', name: '212 VIP Rose', file: 'carolina-herrera-212-vip-rose.jpg' },
-{ brand: 'Carolina Herrera', name: 'Bad Boy', file: 'carolina-herrera-bad-boy.jpg' },
-{ brand: 'Carolina Herrera', name: 'CH Men Prive', file: 'carolina-herrera-ch-men-prive.jpg' },
-{ brand: 'Carolina Herrera', name: 'Good Girl Midnight', file: 'carolina-herrera-good-girl-midnight.jpg' },
-{ brand: 'Carolina Herrera', name: 'Good Girl Blush', file: 'carolina-herrera-good=girl-blush.jpg' },
-{ brand: 'Carolina Herrera', name: 'Good Girl', file: 'carolina-herrera-good-girl60805.jpg' },
-
-// Chanel
-{ brand: 'Chanel', name: 'Allure Homme Sport', file: 'chanel-allure-homme-sport-men.jpg' },
-{ brand: 'Chanel', name: 'Chance Eau Tendre', file: 'chanel-chance-eau0tendre.jpg' },
-{ brand: 'Chanel', name: 'Coco Mademoiselle', file: 'chanel-coco-mademoiselle.jpg' },
-{ brand: 'Chanel', name: 'Coco Noir', file: 'chanel-coco-noir.jpg' },
-{ brand: 'Chanel', name: 'Egoiste Platinum', file: 'chanel-egoiste-platinum-men.jpg' },
-
-// Chloe
-{ brand: 'Chloe', name: 'Chloe', file: 'chloe-chloe.jpg' },
-
-// Cool Water
-{ brand: 'Davidoff', name: 'Cool Water Woman (Classic)', file: 'cool-water-woman.jpg' },
-
-// Creed
-{ brand: 'Creed', name: 'Aventus', file: 'creed-aventus.jpg' },
-{ brand: 'Creed', name: 'Aventus Absolu', file: 'creed-aventus-absolu.jpg' },
-{ brand: 'Creed', name: 'Aventus for Her', file: 'creed-aventus-for-her.jpg' },
-{ brand: 'Creed', name: 'Carmina', file: 'creed-carmina.jpg' },
-{ brand: 'Creed', name: 'Silver Mountain Water', file: 'creed-silver-mountain-water.jpg' },
-{ brand: 'Creed', name: 'Virgin Island Water', file: 'creed-virgin-island-water.jpg' },
-
-// Davidoff
-{ brand: 'Davidoff', name: 'Cool Water', file: 'davidoff-cool-water.jpg' },
-{ brand: 'Davidoff', name: 'Cool Water Woman', file: 'davidoff-cool-water-woman.jpg' },
-
-// Diesel
-{ brand: 'Diesel', name: 'Only the Brave', file: 'diesel-only-the-brave.jpg' },
-
-// Dior
-{ brand: 'Dior', name: 'Addict', file: 'dior-addict.jpg' },
-{ brand: 'Dior', name: 'Amber Nuit', file: 'dior-amber-nuit-unisex.jpg' },
-{ brand: 'Dior', name: 'Fahrenheit', file: 'dior-fahrenheit.jpg' },
-{ brand: 'Dior', name: 'Homme', file: 'dior-homme.jpg' },
-{ brand: 'Dior', name: 'Homme Intense', file: 'dior-homme-intense.jpg' },
-{ brand: 'Dior', name: 'Hypnotic Poison', file: 'dior-hypnotic-poison.jpg' },
-{ brand: 'Dior', name: 'Jadore', file: 'dior-jadore.jpg' },
-{ brand: 'Dior', name: 'Miss Dior Blooming Bouquet', file: 'dior-miss-dior-blooming-bouquet.jpg' },
-{ brand: 'Dior', name: 'Oud Ispahan', file: 'dior-oud-ispahan.jpg' },
-{ brand: 'Dior', name: 'Sauvage', file: 'dior-sauvage.jpg' },
-{ brand: 'Dior', name: 'Sauvage Elixir', file: 'dior-sauvage-elixir.jpg' },
-{ brand: 'Dior', name: 'Vanilla Diorama', file: 'dior-vanilla-diorama-unisex.jpg' },
-
-// Dolce & Gabbana
-{ brand: 'Dolce & Gabbana', name: 'The One', file: 'dolce-&-gabbana-the-one.jpg' },
-{ brand: 'Dolce & Gabbana', name: 'K', file: 'dolce-&-gabbana-k.jpg' },
-{ brand: 'Dolce & Gabbana', name: 'Light Blue', file: 'dolce-&-gabbana-light-blue.jpg' },
-{ brand: 'Dolce & Gabbana', name: 'Light Blue Forever', file: 'dolce-&-gabbana-light-blue-forever.jpg' },
-{ brand: 'Dolce & Gabbana', name: "L'Imperatrice", file: 'dolce-&-gabbana-limperatrice.jpg' },
-{ brand: 'Dolce & Gabbana', name: 'Devotion', file: 'dolce-&-gabbana-dovotion.jpg' },
-
-// Dunhill
-{ brand: 'Dunhill', name: 'Desire Blue', file: 'dunhill-desire-blue.jpg' },
-
-// Elie Saab
-{ brand: 'Elie Saab', name: 'Girl of Now', file: 'elie-saab-girl-of-now.jpg' },
-{ brand: 'Elie Saab', name: 'Le Parfum', file: 'elie-saab-le-parfum.jpg' },
-{ brand: 'Elie Saab', name: "L'Homme", file: 'elie-saab-lhomme.jpg' },
-
-// Escada
-{ brand: 'Escada', name: 'Sunset', file: 'escada-sunset.jpg' },
-
-// Giorgio Armani
-{ brand: 'Giorgio Armani', name: 'Acqua di Gio Profondo', file: 'acqua-di-gio-profondo-giorgio-armani.jpg' },
-{ brand: 'Giorgio Armani', name: 'Acqua di Gio Profumo', file: 'acqua-di-gio-profumo-giorgio-armani.jpg' },
-{ brand: 'Giorgio Armani', name: 'My Way', file: 'my-way-giorgio-armani.jpg' },
-{ brand: 'Giorgio Armani', name: 'Si', file: 'si-giorgio-armani.jpg' },
-
-// Givenchy
-{ brand: 'Givenchy', name: 'Gentleman Boise', file: 'gentelman-boisee-givenchy.jpg' },
-{ brand: 'Givenchy', name: 'Gentleman Reserve Privee', file: 'gentelman-reserve-privee.jpg' },
-{ brand: 'Givenchy', name: 'Irresistible Rose Velvet', file: 'irresistible-rose-velvet-givenchy.jpg' },
-
-// Grand Soir
-{ brand: 'Grand Soir', name: 'Grand Soir', file: 'grand-soir.jpg' },
-
-// Gucci
-{ brand: 'Gucci', name: 'Bloom', file: 'gucci-bloom.jpg' },
-{ brand: 'Gucci', name: 'Flora', file: 'gucci-flora.jpg' },
-{ brand: 'Gucci', name: 'Guilty', file: 'guilty-gucci.jpg' },
-
-// Guerlain
-{ brand: 'Guerlain', name: 'Insolence', file: 'guerlain-insolence.jpg' },
-{ brand: 'Guerlain', name: "L'Homme Ideal", file: 'lhomme-ideal-guerlain.jpg' },
-
-// Hermes
-{ brand: 'Hermes', name: "Terre d'Hermes", file: 'hermes-terre-dhermes.jpg' },
-{ brand: 'Hermes', name: "Voyage d'Hermes", file: 'hermes-voyage-dhermes.jpg' },
-
-// Hugo Boss
-{ brand: 'Boss', name: 'The Scent (Hugo Boss)', file: 'hugo-boss-the-scent.jpg' },
-{ brand: 'Boss', name: 'Boss The Scent Elixir', file: 'hugo-boss-boss-the-scent-elixir.jpg' },
-
-// Jean Paul Gaultier
-{ brand: 'Jean Paul Gaultier', name: 'Le Male', file: 'jean-paul-gaultier-le-male.jpg' },
-{ brand: 'Jean Paul Gaultier', name: 'Le Beau Le Parfum', file: 'jean-paul-gaultier-le-beau-le-parfum.jpg' },
-{ brand: 'Jean Paul Gaultier', name: 'Scandal', file: 'jean-paul-gaultier-scandal.jpg' },
-
-// Kayali
-{ brand: 'Kayali', name: 'Eden Juice Apple', file: 'kayali-eden-juice-apple.jpg' },
-{ brand: 'Kayali', name: 'Vanilla 28', file: 'kayali-vanilla-28.jpg' },
-{ brand: 'Kayali', name: 'Yum Boujee Marshmallow', file: 'kayali-yum-boujee-marshmellow.jpg' },
-
-// Lacoste
-{ brand: 'Lacoste', name: 'L.12.12 Blanc', file: 'lacoste-l.12.12-blanc.jpg' },
-
-// Lancome
-{ brand: 'Lancome', name: 'Idole', file: 'lancome-idole.jpg' },
-{ brand: 'Lancome', name: 'La Vie Est Belle', file: 'lancome-paris-la vie-est-belle.jpg' },
-
-// Louis Vuitton
-{ brand: 'Louis Vuitton', name: 'Afternoon Swim', file: 'louis-vuitton-afternoon-swim.jpg' },
-{ brand: 'Louis Vuitton', name: 'On the Beach', file: 'louis-vuitton-on-the-beach.jpg' },
-
-// Maison Francis Kurkdjian
-{ brand: 'Maison Francis Kurkdjian', name: 'Baccarat Rouge 540', file: 'maison-francis-kurkdjian-baccarat-rouge-540.jpg' },
-{ brand: 'Maison Francis Kurkdjian', name: '724', file: 'maison-francis-kurdjian-724.jpg' },
-{ brand: 'Maison Francis Kurkdjian', name: 'Gentle Fluidity', file: 'maison-francis-kurkdjian-gentle-fluidity.jpg' },
-{ brand: 'Maison Francis Kurkdjian', name: 'Oud Satin Mood', file: 'maison-francis-kurkdjian-oud-satin-mood.jpg' },
-
-// Mancera
-{ brand: 'Mancera', name: 'Instant Crush', file: 'mancera-instant-crush-eau-de-parfum40.jpg' },
-{ brand: 'Mancera', name: 'Paris Cedrat Boise', file: 'mancera-paris-cedrat-boise.jpg' },
-
-// Montblanc
-{ brand: 'Montblanc', name: 'Legend EDP', file: 'montblanc-legend-edp.jpg' },
-{ brand: 'Montblanc', name: 'Legend Night', file: 'montblanc-legend-night.jpg' },
-
-// Mugler
-{ brand: 'Mugler', name: 'Alien', file: 'mugler-alien.jpg' },
-
-// Narciso Rodriguez
-{ brand: 'Narciso Rodriguez', name: 'For Her Intense', file: 'narciso-rodriguez-for-her-intense.jpg' },
-{ brand: 'Narciso Rodriguez', name: 'Pure Musc', file: 'narciso-rodriguez-pure-musc.jpg' },
-
-// Nina Ricci
-{ brand: 'Nina Ricci', name: 'Nina', file: 'nina-ricci-nina.jpg' },
-
-// Parfums de Marly
-{ brand: 'Parfums de Marly', name: 'Delina', file: 'parfums-de-marly-delina.jpg' },
-{ brand: 'Parfums de Marly', name: 'Greenley', file: 'parfums-de-marly-greenley.jpg' },
-{ brand: 'Parfums de Marly', name: 'Kalan', file: 'parfums-de-marly-kalan.jpg' },
-{ brand: 'Parfums de Marly', name: 'Layton', file: 'parfums-de-marly-layton.jpg' },
-
-// Portrait of a Lady
-{ brand: 'Portrait of a Lady', name: 'Portrait of a Lady', file: 'portrait-of-a-lady-frederic-male.jpg' },
-
-// Rabanne
-{ brand: 'Rabanne', name: 'Invictus Parfum', file: 'rabanne-invictus-parfum.jpg' },
-{ brand: 'Rabanne', name: 'Lady Million', file: 'rabanne-lady-million.jpg' },
-{ brand: 'Rabanne', name: 'Olympya', file: 'rabanne-olympea.jpg' },
-
-// Roberto Cavalli
-{ brand: 'Roberto Cavalli', name: 'Paradise', file: 'roberto-cavalli-paradise.jpg' },
-
-// Stronger With You
-{ brand: 'Stronger With You', name: 'Absolutely', file: 'stronger-with-you-absolutley.jpg' },
-{ brand: 'Stronger With You', name: 'Intensely', file: 'stronger-with-you-intensely.jpg' },
-
-// Tom Ford
-{ brand: 'Tom Ford', name: 'Tobacco Vanille', file: 'tom-ford-tobacco-vanille.jpg' },
-
-// Valentino
-{ brand: 'Valentino', name: 'Donna Born in Roma', file: 'valentino-donna-born-in-roma.jpg' },
-{ brand: 'Valentino', name: 'Uomo Born in Roma', file: 'valentino-uomo-born-in-roma.jpg' },
-
-// Versace
-{ brand: 'Versace', name: 'Bright Crystal', file: 'versace-bright-crystal.jpg' },
-{ brand: 'Versace', name: 'Crystal Noir', file: 'versace-crystal-noir.jpg' },
-{ brand: 'Versace', name: 'Eros Flame', file: 'versace-eros-flame.jpg' },
-{ brand: 'Versace', name: 'Eros', file: 'versace-eros.jpg' },
-
-// Victoria's Secret
-{ brand: "Victoria's Secret", name: 'Bombshell', file: 'victorias-secret-bombshell.jpg' },
-{ brand: "Victoria's Secret", name: 'Tease Sugar Fleur', file: 'victorias-secret-tease-sugar-fleur.jpg' },
-{ brand: "Victoria's Secret", name: 'Very Sexy Orchid', file: 'victorias-secret-very-sexy-orchid.jpg' },
-
-// Avon
-{ brand: 'Avon', name: 'Far Away', file: 'avon-far-away-woman.jpg' }
-            ];
-
-            // Group products by brand
-            const groupedByBrand = {};
-            products.forEach(product => {
-                if (!groupedByBrand[product.brand]) {
-                    groupedByBrand[product.brand] = [];
-                }
-                groupedByBrand[product.brand].push(product);
-            });
-
-            // Sort brands alphabetically
-            const sortedBrands = Object.keys(groupedByBrand).sort();
-
-            const container = document.getElementById('collectionContainer');
-            const searchInput = document.getElementById('searchInput');
-
-            // Render all products grouped by brand
-            function renderProducts(filterText = '') {
-                container.innerHTML = '';
-                const filterLower = filterText.toLowerCase().trim();
-                let hasResults = false;
-
-                sortedBrands.forEach(brand => {
-                    const brandProducts = groupedByBrand[brand];
-                    const filteredProducts = filterLower
-                        ? brandProducts.filter(p =>
-                            p.name.toLowerCase().includes(filterLower) ||
-                            brand.toLowerCase().includes(filterLower)
-                        )
-                        : brandProducts;
-
-                    if (filteredProducts.length > 0) {
-                        hasResults = true;
-                        const brandSection = document.createElement('div');
-                        brandSection.className = 'brand-section';
-
-                        const brandHeader = document.createElement('h2');
-                        brandHeader.className = 'brand-header';
-                        brandHeader.textContent = brand;
-                        brandSection.appendChild(brandHeader);
-
-                        const grid = document.createElement('div');
-                        grid.className = 'collection-grid';
-
-                        filteredProducts.forEach(product => {
-                            const card = document.createElement('div');
-                            card.className = 'product-card';
-                            card.onclick = () => openOrderModal(brand, product.name);
-                            makeCardAccessible(card);
-                            card.innerHTML = `
-                                <img src="photo/items/${product.file}" alt="${brand} ${product.name}" class="product-card-img" loading="lazy">
-                                <div class="product-info">
-                                    <div class="product-brand">${brand}</div>
-                                    <div class="product-title">${product.name}</div>
-                                    <div class="product-price">
-                                        <span class="price-line">
-                                            <span class="new-price">$10</span>
-                                            <span class="old-price">$12</span>
-                                            <span class="size-label">/50 ml</span>
-                                        </span>
-                                        <span class="price-line">
-                                            <span class="new-price">$15</span>
-                                            <span class="old-price">$18</span>
-                                            <span class="size-label">/100 ml</span>
-                                        </span>
-                                    </div>
-                                    <button class="product-btn">Quick Order</button>
-                                </div>
-`;
-                            grid.appendChild(card);
-                        });
-
-                        brandSection.appendChild(grid);
-                        container.appendChild(brandSection);
-                    }
-                });
-
-                if (!hasResults) {
-                    container.innerHTML = `
-                        <div class="no-results">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <p></p>
-                        </div>
-                    `;
-                    container.querySelector('p').textContent = `No fragrances found matching "${filterText}"`;
-                }
-            }
-
-            // Search functionality
-            searchInput.addEventListener('input', (e) => {
-                renderProducts(e.target.value);
-            });
-
-            // Initial render
-            renderProducts();
-
-            // Position the search bar correctly now that it's in the DOM
-            placeSearchBar();
-        });
-        function placeSearchBar() {
-            const search = document.getElementById('searchContainer');
-            const headerInner = document.querySelector('.header-inner');
-            const backBtn = document.querySelector('.header-right');
-            headerInner.insertBefore(search, backBtn); // always in header
-        }
-    </script>
+    <div class="footer-cols">
+      <div><h4>Explore</h4><ul><li><a href="index.html#edition">Signature edit</a></li><li><a href="collection.html">Full collection</a></li><li><a href="index.html#craft">Packaging</a></li><li><a href="index.html#story">Our story</a></li><li><a href="index.html#voices">Reviews</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="https://wa.me/96181772615" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:velmorafragrances6@gmail.com">Email</a></li><li><a href="https://www.instagram.com/velmorafragrancias/?hl=en" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+    </div>
+    <div>
+      <h4>The private list</h4>
+      <p>New scent drops and exclusive offers, straight to your inbox.</p>
+      <form class="newsletter" id="newsletter"><input type="email" placeholder="Your email address" aria-label="Email address" required><button type="submit">Join</button></form>
+    </div>
+  </div>
+  <div class="footer-word" aria-hidden="true">VELMORA</div>
+  <div class="footer-bottom"><span>&copy; 2026 Velmora Fragrancias. All rights reserved.</span><span>Crafted in Lebanon</span></div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/collection.js"></script>
 </body>
 </html>
