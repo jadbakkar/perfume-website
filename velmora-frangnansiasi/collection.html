@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse the full Velmora Fragrancias catalog of luxury-inspired perfume oils by brand.">
     <title>Velmora Fragrancias | Full Collection</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +26,7 @@
             background: transparent;
         }
 
-        @media (min-width: 769px) {
+        @media (min-width: 768px) {
             .search-container {
                 max-width: 320px;
                 width: 100%;
@@ -119,7 +120,7 @@
             margin-bottom: 16px;
             display: block;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
     .header-inner {
         flex-wrap: wrap;
     }
@@ -130,39 +131,11 @@
         padding: 12px 0;
     }
 }
-.product-price {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.price-line {
-    display: flex;
-    align-items: baseline;
-    gap: 6px;
-}
-
-.new-price {
-    color: #e63946;       /* highlight the deal price */
-    font-weight: 700;
-    font-size: 1.05em;
-}
-
-.old-price {
-    color: #999;
-    text-decoration: line-through;
-    font-size: 0.9em;
-}
-
-.size-label {
-    color: #666;
-    font-size: 0.85em;
-}
     </style>
 </head>
 <body>
     <!-- HEADER -->
-   <header class="header" id="mainHeader">
+   <header class="header header--solid" id="mainHeader">
     <div class="header-inner">
         <a href="index.html" class="logo-wrap">
             <img src="photo/logo.jpeg" alt="Velmora" class="logo-img">
@@ -182,15 +155,12 @@
     </div>
 </header>
 
-<section class="section-padding" style="padding-top: 100px;">
+<section class="section-padding" style="padding-top: 120px;">
     <div class="container" style="margin-bottom: 32px; text-align: center;">
         <div class="section-badge">Full Catalog</div>
         <h1 class="section-title">All <em>Collections</em></h1>
         <p class="section-sub" style="margin: 0 auto;">Explore our complete range of luxury-inspired scents. Tap any item to order.</p>
     </div>
-
-    <!-- Placeholder: search bar moves here on mobile -->
-    <div id="searchMobileSlot"></div>
 
     <div class="collection-container" id="collectionContainer"></div>
 </section>
@@ -203,15 +173,15 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/96170917681" class="float-wa" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/96181772615" class="float-wa" aria-label="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <!-- ORDER MODAL -->
-    <div class="modal-overlay" id="orderModal">
+    <div class="modal-overlay" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
         <div class="modal-box" style="position: relative;">
-            <button class="modal-close" id="modalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
-            <h2 class="modal-title">Place Your Order</h2>
+            <button class="modal-close" id="modalCloseBtn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="modal-title" id="orderModalTitle">Place Your Order</h2>
             <div class="modal-product-preview">
                 <div class="modal-thumb"><i class="fa-solid fa-bottle-droplet"></i></div>
                 <div>
@@ -220,22 +190,22 @@
                 </div>
             </div>
             <div class="modal-form-group">
-                <label>Size</label>
+                <label for="modalSize">Size</label>
                 <select id="modalSize">
                     <option value="50ml">50 ml — $10.00</option>
                     <option value="100ml" selected>100 ml — $15.00</option>
                 </select>
             </div>
             <div class="modal-form-group">
-                <label>Your Name</label>
+                <label for="modalClientName">Your Name</label>
                 <input type="text" id="modalClientName" placeholder="Full name">
             </div>
             <div class="modal-form-group">
-                <label>Your Phone / WhatsApp</label>
+                <label for="modalClientPhone">Your Phone / WhatsApp</label>
                 <input type="tel" id="modalClientPhone" placeholder="+961 81772615">
             </div>
             <div class="modal-form-group">
-                <label>Delivery Address</label>
+                <label for="modalClientAddress">Delivery Address</label>
                 <div style="position: relative; display: flex; flex-direction: column; gap: 8px;">
                     <input type="text" id="modalClientAddress" placeholder="City, area, building…">
                     <button type="button" id="getLocationBtn" style="
@@ -268,23 +238,6 @@
     <script src="app.js"></script>
 
     <script>
-        function placeSearchBar() {
-            const search = document.getElementById('searchContainer');
-            const mobileSlot = document.getElementById('searchMobileSlot');
-            const headerInner = document.querySelector('.header-inner');
-            const backBtn = document.querySelector('.header-right');
-
-            if (window.innerWidth >= 769) {
-                // Desktop: put search between logo and back button
-                headerInner.insertBefore(search, backBtn);
-            } else {
-                // Mobile: put search back in its original spot
-                mobileSlot.appendChild(search);
-            }
-        }
-
-        window.addEventListener('resize', placeSearchBar);
-
         document.addEventListener('DOMContentLoaded', () => {
             // Product data organized by brand
             const products = [// Azzaro
@@ -295,10 +248,10 @@
 { brand: 'Azzaro', name: 'Chrome Extreme', file: 'azzaro-chrome-extreme-men.jpg' },
 
 // Paco Rabanne
-{ brand: 'Paco Rabanne', name: '1 Million Gold', file: 'paco-rabanne-1-million-gold.jpg' },
+{ brand: 'Rabanne', name: '1 Million Gold', file: 'paco-rabanne-1-million-gold.jpg' },
 
 // Bleu de Chanel
-{ brand: 'Bleu de Chanel', name: 'Eau de Parfum', file: 'bleu-de-chanel-eau-de-parfum-men.jpg' },
+{ brand: 'Chanel', name: 'Bleu de Chanel Eau de Parfum', file: 'bleu-de-chanel-eau-de-parfum-men.jpg' },
 
 // Boss
 { brand: 'Boss', name: 'The Scent', file: 'boss-the-scent.jpg' },
@@ -345,7 +298,7 @@
 { brand: 'Chloe', name: 'Chloe', file: 'chloe-chloe.jpg' },
 
 // Cool Water
-{ brand: 'Cool Water', name: 'Woman', file: 'cool-water-woman.jpg' },
+{ brand: 'Davidoff', name: 'Cool Water Woman (Classic)', file: 'cool-water-woman.jpg' },
 
 // Creed
 { brand: 'Creed', name: 'Aventus', file: 'creed-aventus.jpg' },
@@ -423,8 +376,8 @@
 { brand: 'Hermes', name: "Voyage d'Hermes", file: 'hermes-voyage-dhermes.jpg' },
 
 // Hugo Boss
-{ brand: 'Hugo Boss', name: 'Boss The Scent', file: 'hugo-boss-the-scent.jpg' },
-{ brand: 'Hugo Boss', name: 'Boss The Scent Elixir', file: 'hugo-boss-boss-the-scent-elixir.jpg' },
+{ brand: 'Boss', name: 'The Scent (Hugo Boss)', file: 'hugo-boss-the-scent.jpg' },
+{ brand: 'Boss', name: 'Boss The Scent Elixir', file: 'hugo-boss-boss-the-scent-elixir.jpg' },
 
 // Jean Paul Gaultier
 { brand: 'Jean Paul Gaultier', name: 'Le Male', file: 'jean-paul-gaultier-le-male.jpg' },
@@ -561,6 +514,7 @@
                             const card = document.createElement('div');
                             card.className = 'product-card';
                             card.onclick = () => openOrderModal(brand, product.name);
+                            makeCardAccessible(card);
                             card.innerHTML = `
                                 <img src="photo/items/${product.file}" alt="${brand} ${product.name}" class="product-card-img" loading="lazy">
                                 <div class="product-info">
@@ -593,9 +547,10 @@
                     container.innerHTML = `
                         <div class="no-results">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <p>No fragrances found matching "${filterText}"</p>
+                            <p></p>
                         </div>
                     `;
+                    container.querySelector('p').textContent = `No fragrances found matching "${filterText}"`;
                 }
             }
 
@@ -611,11 +566,11 @@
             placeSearchBar();
         });
         function placeSearchBar() {
-    const search = document.getElementById('searchContainer');
-    const headerInner = document.querySelector('.header-inner');
-    const backBtn = document.querySelector('.header-right');
-    headerInner.insertBefore(search, backBtn); // always in header now
-}
+            const search = document.getElementById('searchContainer');
+            const headerInner = document.querySelector('.header-inner');
+            const backBtn = document.querySelector('.header-right');
+            headerInner.insertBefore(search, backBtn); // always in header
+        }
     </script>
 </body>
 </html>

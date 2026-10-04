@@ -1,0 +1,14 @@
+# Netlify auto-deploys this repo on every push to the production branch.
+[build]
+  publish = "velmora-frangnansiasi"   # no build step: static site
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/photo/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
