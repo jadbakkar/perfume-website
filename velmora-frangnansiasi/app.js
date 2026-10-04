@@ -220,6 +220,12 @@ document.addEventListener('DOMContentLoaded', () => {
         revealEls.forEach(el => el.classList.add('in'));
     }
 
+    // ── Extra "Find my scent" triggers ──
+    document.querySelectorAll('[data-open-quiz]').forEach(b => b.addEventListener('click', () => {
+        const q = document.getElementById('openQuizBtn');
+        if (q) q.click();
+    }));
+
     // ── Close modal / drawer with Escape ──
     document.addEventListener('keydown', (e) => {
         if (e.key !== 'Escape') return;

@@ -14,7 +14,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
@@ -26,7 +26,7 @@
             <div class="ticker-track"><span>✨FREE delivery for your orders from the website &nbsp;•&nbsp; FREE Discovery Set with any 100ml purchase &nbsp;•&nbsp; 🚚 Nationwide Delivery across Lebanon &nbsp;•&nbsp; 💧 Pure Oil — 12+ Hours Lasting&nbsp;•&nbsp; free delivery for your orders from the website ✨</span><span aria-hidden="true">✨FREE delivery for your orders from the website &nbsp;•&nbsp; FREE Discovery Set with any 100ml purchase &nbsp;•&nbsp; 🚚 Nationwide Delivery across Lebanon &nbsp;•&nbsp; 💧 Pure Oil — 12+ Hours Lasting&nbsp;•&nbsp; free delivery for your orders from the website ✨</span></div>
         </div>
         <div class="header-inner">
-            <a href="#" class="logo-wrap">
+            <a href="#hero" class="logo-wrap">
                 <img src="photo/logo.jpeg" alt="Velmora" class="logo-img">
                 <span class="logo-text">VELMORA</span>
             </a>
@@ -38,9 +38,8 @@
                 <a href="#reviews" class="nav-link">Reviews</a>
             </nav>
             <div class="header-right">
-                <button class="icon-btn" id="hamburgerBtn" aria-label="Menu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+                <a href="#bestsellers" class="btn-primary btn-primary--navy header-cta">Shop now</a>
+                <button class="icon-btn" id="hamburgerBtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
     </header>
@@ -74,28 +73,31 @@
 
     <!-- ═══════════ HERO ═══════════ -->
     <section class="hero" id="hero">
-        <div class="hero-bg">
-            <img src="photo/mobile-hero.jpeg" alt="Velmora" class="hero-bg-mobile">
-            <img src="photo/main.hrro.jpeg" alt="Velmora" class="hero-bg-desktop">
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-eyebrow">Inspired by Luxury · Crafted by Velmora</div>
-            <h1 class="hero-title">Your Favourite Scent. <em>Our Signature.</em></h1>
-            <p class="hero-sub">
-                Choose the big-brand perfume that speaks to you. We recreate it — with our own exclusive packaging and quality.
-            </p>
-            <div class="hero-cta-group">
-                <a href="#bestsellers" class="btn-primary btn-primary--gold">
-                    <i class="fa-solid fa-bag-shopping"></i> Shop Now
-                </a>
+        <div class="hero-grid">
+            <div class="hero-copy">
+                <span class="pill"><i class="fa-solid fa-leaf"></i> Lebanese fragrance house</span>
+                <h1 class="hero-title">Your favourite scent. <span class="hl">Our signature.</span></h1>
+                <p class="hero-sub">Choose the big-brand perfume that speaks to you. We recreate it with pure concentrated oil and our own exclusive packaging.</p>
+                <div class="hero-cta-group">
+                    <a href="#bestsellers" class="btn-primary btn-primary--gold"><i class="fa-solid fa-bag-shopping"></i> Shop now</a>
+                    <button type="button" class="btn-primary btn-primary--ghost" data-open-quiz><i class="fa-solid fa-wand-magic-sparkles"></i> Find my scent</button>
+                </div>
+                <div class="hero-trust">
+                    <span><i class="fa-solid fa-truck-fast"></i> Free delivery</span>
+                    <span><i class="fa-solid fa-droplet"></i> Pure oil</span>
+                    <span><i class="fa-solid fa-gift"></i> Gift-ready box</span>
+                </div>
             </div>
-        </div>
-        <div class="hero-meta">
-            <div><strong>12+ hrs</strong>Lasting pure oil</div>
-            <div><strong>Lebanon</strong>Crafted locally</div>
-            <div><strong>24 h</strong>Nationwide delivery</div>
-            <div><strong>50 · 100 ml</strong>Signature bottles</div>
+            <div class="hero-visual reveal">
+                <div class="hero-frame">
+                    <picture>
+                        <source srcset="photo/main.hrro.jpeg" media="(min-width: 768px)">
+                        <img src="photo/mobile-hero.jpeg" alt="Velmora perfume bottle by the sea">
+                    </picture>
+                </div>
+                <div class="float-card fc-1"><i class="fa-solid fa-clock"></i><div><strong>12+ hrs</strong>Lasting pure oil</div></div>
+                <div class="float-card fc-2"><i class="fa-solid fa-truck-fast"></i><div><strong>24 h</strong>Delivery in Lebanon</div></div>
+            </div>
         </div>
     </section>
 
@@ -103,26 +105,39 @@
     <div class="brand-strip">
         <div class="brand-strip-inner" id="brandStrip"></div>
     </div>
-     
-    <!-- ═══════════ STATS ═══════════ -->
-    <section class="stats-strip">
-        <div class="stats-grid">
-            <div class="stat reveal"><div class="stat-num">110<em>+</em></div><div class="stat-label">Inspired scents</div></div>
-            <div class="stat reveal" style="--d:.1s"><div class="stat-num">100<em>%</em></div><div class="stat-label">Pure perfume oil</div></div>
-            <div class="stat reveal" style="--d:.2s"><div class="stat-num">12<em>h+</em></div><div class="stat-label">Longevity</div></div>
-            <div class="stat reveal" style="--d:.3s"><div class="stat-num">24<em>h</em></div><div class="stat-label">Delivery in Lebanon</div></div>
+
+    <!-- ═══════════ WHY VELMORA (BENTO) ═══════════ -->
+    <section class="section-padding" id="why">
+        <div class="container">
+            <div class="section-head reveal">
+                <div>
+                    <span class="section-badge">Why Velmora</span>
+                    <h2 class="section-title">Luxury scents,<br><em>made personal.</em></h2>
+                </div>
+                <p class="section-sub">European fragrance oils, bottled and packaged by hand in Lebanon.</p>
+            </div>
+            <div class="bento">
+                <div class="tile tile--photo tile--tall tile--wide reveal"><img src="photo/gift-box.jpeg" alt="Velmora gift box" loading="lazy"><div class="tile-cap">Gift-ready luxury box</div></div>
+                <div class="tile tile--navy reveal" style="--d:.08s"><div class="tile-num">130<small>+</small></div><div class="tile-label">Inspired scents</div></div>
+                <div class="tile tile--gold reveal" style="--d:.16s"><div class="tile-num">12<small>h+</small></div><div class="tile-label">Lasting performance</div></div>
+                <div class="tile tile--mist tile--wide-m reveal" style="--d:.1s"><div class="tile-title">100% pure perfume oil</div><p>No alcohol dilution. A single drop goes a long way.</p></div>
+                <div class="tile tile--turq reveal" style="--d:.2s"><div class="tile-num">24<small>h</small></div><div class="tile-label">Delivery across Lebanon</div></div>
+            </div>
         </div>
     </section>
 
-    <!-- ═══════════ QUIZ BUTTON + POPUP MODAL ═══════════ -->
-<!-- Paste this whole block anywhere in your <body> -->
+    <!-- ═══════════ QUIZ BANNER ═══════════ -->
+    <section class="container reveal" id="quiz" style="padding-bottom: 80px;">
+        <div class="quiz-banner">
+            <div>
+                <h2>Not sure what to wear?</h2>
+                <p>Answer four quick questions and we will match you with your scent.</p>
+            </div>
+            <button id="openQuizBtn" class="btn-primary btn-primary--gold"><i class="fa-solid fa-wand-magic-sparkles"></i> Find my scent</button>
+        </div>
+    </section>
 
-<div style="display: flex; justify-content: center; width: 100%; margin: 24px 0;">
-    <button id="openQuizBtn" class="btn-primary btn-primary--gold" style="padding: 14px 28px;">
-        <i class="fa-solid fa-wand-magic-sparkles"></i> Find My Scent
-    </button>
-</div>
-
+    <!-- ═══════════ QUIZ MODAL ═══════════ -->
 <div class="quiz-modal-overlay" id="quizModalOverlay">
   <div class="quiz-modal-box">
     <button class="quiz-modal-close" id="quizModalCloseBtn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
@@ -256,7 +271,7 @@
   @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
   .quiz-question {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--display);
     font-size: 24px; font-weight: 600;
     color: var(--velmora-navy, #11263F);
     margin-bottom: 20px; text-align: center;
@@ -286,7 +301,7 @@
     margin-bottom: 14px;
   }
   .quiz-result-img { width: 140px; height: 140px; object-fit: cover; border-radius: 18px; margin: 0 auto 18px; display: block; }
-  .quiz-result-name { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 600; color: var(--velmora-navy, #11263F); margin-bottom: 6px; }
+  .quiz-result-name { font-family: var(--display); font-size: 30px; font-weight: 600; color: var(--velmora-navy, #11263F); margin-bottom: 6px; }
   .quiz-result-brand { font-size: 13px; color: rgba(17,38,63,0.55); margin-bottom: 16px; }
   .quiz-result-price { font-size: 18px; font-weight: 600; color: var(--champagne-gold, #C89B4A); margin-bottom: 8px; }
   .quiz-result-desc { font-size: 14px; line-height: 1.7; color: rgba(17,38,63,0.75); margin-bottom: 22px; }
@@ -410,12 +425,15 @@
 })();
 </script>
     <!-- ═══════════ BEST SELLERS ═══════════ -->
-    <section id="bestsellers" class="section-padding" style="position: relative; overflow: hidden;">
-        <div class="accent-mist accent-mist--turquoise" style="top: -40px; right: -60px; width: 340px; height: 340px;"></div>
+    <section id="bestsellers" style="padding: 20px 0 100px;">
         <div class="container reveal">
-            <div class="section-badge">Current Favorites</div>
-            <h2 class="section-title">Best <em>Sellers</em></h2>
-            <p class="section-sub" style="margin-bottom: 28px;">Swipe to explore. Tap any item to order.</p>
+            <div class="section-head">
+                <div>
+                    <span class="section-badge">Current favourites</span>
+                    <h2 class="section-title">Best <em>sellers</em></h2>
+                </div>
+                <a href="collection.html" class="btn-primary btn-primary--ghost">View all <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
         </div>
         <div style="position: relative; width: 100%;">
             <button class="scroll-arrow scroll-arrow--left" id="scrollLeftBtn" aria-label="Scroll Left">
@@ -536,157 +554,78 @@
             </div>
         </div>
         <div class="scroll-indicator" id="scrollIndicator"></div>
-        <div class="container" style="text-align: center; margin-top: 32px; margin-bottom: 24px;">
-            <a href="collection.html" class="btn-primary btn-primary--navy" style="display: inline-flex;">
+        <div class="container" style="text-align: center; margin-top: 28px;">
+            <a href="collection.html" class="btn-primary btn-primary--navy">
                 View All Collections <i class="fa-solid fa-arrow-right" style="font-size: 12px; margin-left: 6px;"></i>
             </a>
         </div>
-        <div class="accent-line-divider"></div>
     </section>
 
-    <!-- ═══════════ ABOUT & TIPS (MERGED) ═══════════ -->
-    <section id="about" class="about-section" style="min-height: auto;">
-        <picture class="about-bg">
-            <source srcset="photo/aboutusimg-pc-version.jpeg" media="(min-width: 768px)">
-            <img src="photo/about-us.jpg" alt="Velmora Story">
-        </picture>
-        <div class="about-overlay"></div>
-        <div class="about-content reveal" style="max-width: 700px;">
-            <div class="section-badge">Our Story</div>
-            <h2 class="section-title">About <em>Us</em></h2>
-            <p style="margin-bottom: 40px;">
-                VELMORA is more than a fragrance — it is a presence you feel and an impression that remains. A Lebanese fragrance house created to bring together luxury, quality, and distinction through thoughtfully priced scents. We carefully select European fragrance oils to create refined scents with distinctive character, elegant projection, and lasting performance. Every order is prepared, bottled, and packaged with care — creating a complete experience worthy of the fragrance inside.
-            </p>
-
-            <div id="tips" style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 32px;">
-                <div class="section-badge">Expert Advice</div>
-                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: white; margin-bottom: 24px;">Fragrance <em>Tips</em></h3>
-                <div class="tip-item">
-                    <div class="tip-icon"><i class="fa-solid fa-droplet"></i></div>
-                    <div>
-                        <h4>Pulse Points</h4>
-                        <p>Apply pure oils to your neck, wrists, and behind the ears where body heat helps diffuse the fragrance all day.</p>
-                    </div>
-                </div>
-                <div class="tip-item">
-                    <div class="tip-icon"><i class="fa-solid fa-sun-plant-wilt"></i></div>
-                    <div>
-                        <h4>Proper Storage</h4>
-                        <p>Keep your bottle away from direct sunlight and extreme temperatures to preserve the delicate top notes.</p>
-                    </div>
-                </div>
-                <div class="tip-item">
-                    <div class="tip-icon"><i class="fa-solid fa-layer-group"></i></div>
-                    <div>
-                        <h4>Scent Layering</h4>
-                        <p>Mix a drop of fresh citrus with a deeper woody scent to create your own signature blend effortlessly.</p>
-                    </div>
-                </div>
-                <div class="tip-item">
-                    <div class="tip-icon"><i class="fa-solid fa-clock"></i></div>
-                    <div>
-                        <h4>Application Timing</h4>
-                        <p>Apply fragrance right after a shower when your skin is warm and slightly moist for the best absorption and lasting sillage.</p>
-                    </div>
+    <!-- ═══════════ ABOUT & TIPS ═══════════ -->
+    <section id="about" class="story section-padding">
+        <div class="container story-grid">
+            <div class="story-media reveal">
+                <picture>
+                    <source srcset="photo/aboutusimg-pc-version.jpeg" media="(min-width: 768px)">
+                    <img src="photo/about-us.jpg" alt="Velmora story" loading="lazy">
+                </picture>
+            </div>
+            <div class="story-body reveal">
+                <span class="section-badge">Our story</span>
+                <h2 class="section-title">About <em>us</em></h2>
+                <p>VELMORA is more than a fragrance — it is a presence you feel and an impression that remains. A Lebanese fragrance house created to bring together luxury, quality, and distinction through thoughtfully priced scents. We carefully select European fragrance oils to create refined scents with distinctive character, elegant projection, and lasting performance. Every order is prepared, bottled, and packaged with care — creating a complete experience worthy of the fragrance inside.</p>
+                <div class="tips-grid" id="tips">
+                    <div class="tip-item"><div class="tip-icon"><i class="fa-solid fa-droplet"></i></div><div><h4>Pulse points</h4><p>Apply to your neck, wrists and behind the ears where body heat helps diffuse the scent all day.</p></div></div>
+                    <div class="tip-item"><div class="tip-icon"><i class="fa-solid fa-sun-plant-wilt"></i></div><div><h4>Proper storage</h4><p>Keep away from direct sunlight and extreme temperatures to preserve the top notes.</p></div></div>
+                    <div class="tip-item"><div class="tip-icon"><i class="fa-solid fa-layer-group"></i></div><div><h4>Scent layering</h4><p>Mix a drop of fresh citrus with a deeper woody scent to create your own signature.</p></div></div>
+                    <div class="tip-item"><div class="tip-icon"><i class="fa-solid fa-clock"></i></div><div><h4>Best timing</h4><p>Apply right after a shower when skin is warm and slightly moist for the best lasting power.</p></div></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ═══════════ PACKAGING ═══════════ -->
-    <section id="packaging" class="packaging-section section-padding" style="position: relative; overflow: hidden;">
-        <div class="accent-mist accent-mist--turquoise" style="bottom: 10px; left: -80px; width: 380px; height: 380px;"></div>
+    <section id="packaging" class="section-padding">
         <div class="container">
-            <div class="unboxing-experience reveal">
-                <div class="section-badge">The Unboxing Experience</div>
-                <h2 class="section-title">Our <em>Packaging</em></h2>
+            <div class="section-head reveal">
+                <div><span class="section-badge">The unboxing experience</span>
+                <h2 class="section-title">Our <em>packaging</em></h2></div>
             </div>
-            <div class="packaging-inner">
-                <div>
-                    <img src="photo/the-package.jpeg" alt="Velmora Packaging" class="packaging-img">
-                </div>
-                <div>
-                    <div class="pkg-feature reveal">
-                        <div class="pkg-icon"><i class="fa-solid fa-box-open"></i></div>
-                        <div>
-                            <h4>Premium Gift-Ready Box</h4>
-                            <p>Every order arrives in a stunning luxury kraft box with shredded fill — making it the perfect gift for any occasion.</p>
-                        </div>
-                    </div>
-                    <div class="pkg-feature reveal">
-                        <div class="pkg-icon"><i class="fa-solid fa-bottle-droplet"></i></div>
-                        <div>
-                            <h4>Signature Glass Bottle</h4>
-                            <p>Custom apothecary-style glass bottle with a handcrafted wooden cork stopper. Truly one of a kind.</p>
-                        </div>
-                    </div>
-                    <div class="pkg-feature reveal">
-                        <div class="pkg-icon"><i class="fa-solid fa-tag"></i></div>
-                        <div>
-                            <h4>Personalized Label</h4>
-                            <p>Every bottle features a custom Velmora label with your bespoke scent profile — your own piece of luxury.</p>
-                        </div>
-                    </div>
-                    <div class="pkg-feature reveal">
-                        <div class="pkg-icon"><i class="fa-solid fa-flask"></i></div>
-                        <div>
-                            <h4>High-Concentration Oil</h4>
-                            <p>Pure concentrated perfume oil — no alcohol dilution — delivering 12+ hours of lasting sillage.</p>
-                        </div>
-                    </div>
+            <div class="pack-grid">
+                <div class="pack-media reveal"><img src="photo/the-package.jpeg" alt="Velmora packaging" loading="lazy"></div>
+                <div class="pkg-list">
+                    <div class="pkg-feature reveal"><div class="pkg-icon"><i class="fa-solid fa-box-open"></i></div><div><h4>Premium gift-ready box</h4><p>Every order arrives in a luxury kraft box with shredded fill — the perfect gift for any occasion.</p></div></div>
+                    <div class="pkg-feature reveal"><div class="pkg-icon"><i class="fa-solid fa-bottle-droplet"></i></div><div><h4>Signature glass bottle</h4><p>Custom apothecary-style glass bottle with a handcrafted wooden cork stopper.</p></div></div>
+                    <div class="pkg-feature reveal"><div class="pkg-icon"><i class="fa-solid fa-tag"></i></div><div><h4>Personalized label</h4><p>Every bottle features a custom Velmora label with your bespoke scent profile.</p></div></div>
+                    <div class="pkg-feature reveal"><div class="pkg-icon"><i class="fa-solid fa-flask"></i></div><div><h4>High-concentration oil</h4><p>Pure concentrated perfume oil — no alcohol dilution — delivering 12+ hours of lasting sillage.</p></div></div>
                 </div>
             </div>
         </div>
-        <div class="accent-line-divider" style="margin-top: 32px;"></div>
     </section>
 
     <!-- ═══════════ GIFT BOX ═══════════ -->
-    <section class="section-padding" style="background: var(--warm-ivory); border-top: 1px solid rgba(17,38,63,0.06); position: relative; overflow: hidden;">
-        <div class="accent-mist accent-mist--gold" style="top: -20px; right: -40px; width: 340px; height: 340px;"></div>
+    <section class="gift-section section-padding">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 36px;">
-                <div class="section-badge">Exclusive Presentation</div>
-                <h2 class="section-title">Luxury <em>Gift Box</em></h2>
+            <div class="section-head reveal">
+                <div><span class="section-badge">Exclusive presentation</span>
+                <h2 class="section-title">Luxury <em>gift box</em></h2></div>
             </div>
-            <div class="packaging-inner">
-                <div>
-                    <div style="border-radius: var(--r-md); overflow: hidden; box-shadow: 0 12px 36px rgba(17,38,63,0.08);">
-                        <img src="photo/gift-box.jpeg" alt="Velmora Gift Box" style="width: 100%; height: auto; display: block; object-fit: cover;">
-                    </div>
-                </div>
-                <div>
-                    <div class="pkg-feature reveal">
-                        <div class="pkg-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-                        <div>
-                            <h4>Package of 3 Bottles Available</h4>
-                            <p>Get a complete luxury experience with our curated set of three signature fragrances.</p>
-                        </div>
-                    </div>
-                    <div class="pkg-feature reveal">
-                        <div class="pkg-icon"><i class="fa-solid fa-pen-nib"></i></div>
-                        <div>
-                            <h4>Custom Printing Available</h4>
-                            <p>Add any name or special phrase on the perfume bottle for any occasion.</p>
-                        </div>
-                    </div>
-                    <div class="pkg-feature reveal">
-                        <div class="pkg-icon"><i class="fa-solid fa-gift"></i></div>
-                        <div>
-                            <h4>Perfect for Gifting</h4>
-                            <p>Perfect for gifting, special occasions, and elegant surprises.</p>
-                        </div>
-                    </div>
+            <div class="pack-grid pack-grid--reverse">
+                <div class="pack-media reveal"><img src="photo/gift-box.jpeg" alt="Velmora gift box" loading="lazy"></div>
+                <div class="pkg-list">
+                    <div class="pkg-feature reveal"><div class="pkg-icon"><i class="fa-solid fa-boxes-stacked"></i></div><div><h4>Package of 3 bottles</h4><p>A complete luxury experience with a curated set of three signature fragrances.</p></div></div>
+                    <div class="pkg-feature reveal"><div class="pkg-icon"><i class="fa-solid fa-pen-nib"></i></div><div><h4>Custom printing</h4><p>Add any name or special phrase on the perfume bottle for any occasion.</p></div></div>
+                    <div class="pkg-feature reveal"><div class="pkg-icon"><i class="fa-solid fa-gift"></i></div><div><h4>Perfect for gifting</h4><p>Special occasions and elegant surprises, beautifully presented.</p></div></div>
                 </div>
             </div>
         </div>
-        <div class="accent-line-divider" style="margin-top: 32px;"></div>
     </section>
 
     <!-- ═══════════ REVIEWS ═══════════ -->
     <section id="reviews" class="reviews-section section-padding">
         <div class="container reveal" style="margin-bottom: 32px;">
-            <div class="section-badge">Client Reviews</div>
-            <h2 class="section-title">What Our Clients <em>Say</em></h2>
+            <span class="section-badge">Client reviews</span>
+            <h2 class="section-title">What our clients <em>say</em></h2>
         </div>
 
         <!-- Row 1 -->
@@ -766,13 +705,13 @@
         </div>
     </section>
 
-    <!-- ═══════════ CTA BANNER ═══════════ -->
+    <!-- ═══════════ CTA ═══════════ -->
     <section class="cta-banner reveal">
-        <h2 class="section-title">Ready to Find <em>Your Scent?</em></h2>
-        <p>Message us on WhatsApp and we'll help you choose the perfect fragrance.</p>
-        <a href="https://wa.me/96181772615" class="btn-primary btn-primary--gold">
-            <i class="fa-brands fa-whatsapp"></i> Start Your Order
-        </a>
+        <div class="cta-card">
+            <h2 class="section-title">Ready to find <br><span style="color:var(--champagne-gold)">your scent?</span></h2>
+            <p>Message us on WhatsApp and we will help you choose the perfect fragrance.</p>
+            <a href="https://wa.me/96181772615" class="btn-primary btn-primary--gold"><i class="fa-brands fa-whatsapp"></i> Start your order</a>
+        </div>
     </section>
 
     <!-- ═══════════ FOOTER ═══════════ -->
